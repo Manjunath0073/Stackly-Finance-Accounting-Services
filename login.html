@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Log in to your Stackly Finance & Accounting account." />
+  <title>Log In — Stackly Finance &amp; Accounting Service</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%2310B981'/%3E%3Cpath d='M7 12l3 3 7-7' stroke='%23fff' stroke-width='2.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/auth.css" />
+</head>
+<body class="auth-page">
+
+  <!-- ==================== MINIMAL TOP BAR ==================== -->
+  <header class="header auth-topbar js-header">
+    <div class="container">
+      <a href="index.html" class="logo" aria-label="Stackly home">
+        <img class="logo__img logo__img--light" src="images/logo/logo-stackly-on-light.png" alt="Stackly" width="346" height="100" decoding="async" />
+        <img class="logo__img logo__img--dark" src="images/logo/logo-stackly-on-dark.png" alt="Stackly" width="346" height="100" decoding="async" />
+      </a>
+
+      <div class="header__actions">
+        <a href="index.html" class="auth-home-link">
+          <span aria-hidden="true">←</span>
+          Go to Home
+        </a>
+        <button class="theme-toggle js-theme-toggle" type="button" aria-label="Toggle dark mode">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5" />
+            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== ANIMATED BACKGROUND ==================== -->
+  <div class="auth-bg" aria-hidden="true">
+    <span class="auth-blob auth-blob--green"></span>
+    <span class="auth-blob auth-blob--teal"></span>
+    <span class="auth-blob auth-blob--blue"></span>
+  </div>
+
+  <main class="auth-main">
+    <div class="auth-container">
+      <div class="auth-card reveal">
+
+        <!-- Branding panel -->
+        <section class="auth-visual" aria-labelledby="auth-visual-title">
+          <img
+            class="auth-visual__img"
+            src="images/photo-1573164713988-8665fc963095-w1000-q40.webp"
+            alt="Stackly's modern office in Salem, Tamil Nadu"
+            width="1000"
+            height="750"
+            loading="lazy"
+            decoding="async"
+            onerror="this.src='images/photo-1556761175-b413da4baf72-w800-q45.webp'"
+          />
+
+          <div class="auth-visual__inner">
+            <a href="index.html" class="auth-visual__logo" aria-label="Stackly home">
+          <img class="logo__img" src="images/logo/logo-stackly-on-dark.png" alt="Stackly" width="346" height="100" decoding="async" />
+        </a>
+
+            <div class="auth-visual__body">
+              <h1 id="auth-visual-title" class="auth-visual__title">Welcome <span class="gradient-text">back</span>.</h1>
+              <p class="auth-visual__text">Your books, your dashboard, and your dedicated team — all in one place.</p>
+            </div>
+
+            <p class="auth-visual__trust">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              Trusted by 2,000+ businesses
+            </p>
+          </div>
+        </section>
+
+        <!-- Form panel -->
+        <section class="auth-form-panel" aria-labelledby="login-title">
+          <div class="auth-form-panel__inner">
+            <div class="auth-form__intro">
+              <h2 id="login-title">Sign in to your account</h2>
+              <p>Welcome back. Enter your details to continue.</p>
+            </div>
+
+            <form class="auth-form js-login-form" novalidate>
+              <fieldset class="auth-role js-role-toggle">
+                <legend>I'm signing in as</legend>
+                <div class="auth-role__options">
+                  <button class="auth-role__option js-role-option is-active" type="button" data-role="client" aria-pressed="true">Client</button>
+                  <button class="auth-role__option js-role-option" type="button" data-role="advisor" aria-pressed="false">Advisor</button>
+                </div>
+                <input class="auth-role__input js-role-input" type="hidden" name="role" value="client" aria-describedby="login-role-error" />
+                <span class="auth-error js-role-error" id="login-role-error" role="alert"></span>
+              </fieldset>
+
+              <div class="auth-field">
+                <label for="login-email">Email</label>
+                <div class="auth-input">
+                  <svg class="auth-input__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/>
+                  </svg>
+                  <input
+                    id="login-email"
+                    name="email"
+                    type="email"
+                    placeholder="you@company.com"
+                    autocomplete="email"
+                    required
+                    aria-describedby="login-email-error"
+                  />
+                </div>
+                <span class="auth-error" id="login-email-error" role="alert"></span>
+              </div>
+
+              <div class="auth-field">
+                <label for="login-password">Password</label>
+                <div class="auth-input">
+                  <svg class="auth-input__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                  </svg>
+                  <input
+                    id="login-password"
+                    name="password"
+                    type="password"
+                    placeholder="Enter your password"
+                    autocomplete="current-password"
+                    required
+                    aria-describedby="login-password-error"
+                  />
+                  <button class="auth-eye js-password-toggle" type="button" aria-label="Show password" aria-pressed="false">
+                    <svg class="icon-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                    <svg class="icon-eye-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/><path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+                  </button>
+                </div>
+                <span class="auth-error" id="login-password-error" role="alert"></span>
+              </div>
+
+              <div class="auth-row">
+                <div class="auth-check">
+                  <input id="login-remember" name="remember" type="checkbox" />
+                  <label for="login-remember">Remember me</label>
+                </div>
+                <a href="#" class="auth-link">Forgot password?</a>
+              </div>
+
+              <button class="btn btn--primary auth-submit js-auth-submit" type="submit" disabled data-loading-text="Logging in...">
+                <span class="auth-submit__text">Log In</span>
+                <span class="auth-submit__spinner" aria-hidden="true"></span>
+              </button>
+
+              <p class="auth-switch">Don't have an account? <a href="signup.html">Sign up</a></p>
+            </form>
+
+            <div class="auth-success js-login-success" role="status" tabindex="-1" hidden>
+              <span class="auth-success__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              </span>
+              <h3>You're signed in.</h3>
+              <p class="js-login-success-text">Signed in as a Client. Redirecting to your dashboard...</p>
+              <a href="dashboard-client.html" class="auth-success__link">Go to your dashboard <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <script src="js/script.js"></script>
+  <script src="js/auth.js"></script>
+
+  <script src="js/redirect-404.js"></script>
+</body>
+</html>

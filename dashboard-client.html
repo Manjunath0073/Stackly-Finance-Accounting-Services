@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Stackly client dashboard — invoices, documents, reports, services, and advisor messaging." />
+  <title>Overview — Stackly Client</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%2310B981'/%3E%3Cpath d='M7 12l3 3 7-7' stroke='%23fff' stroke-width='2.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body>
+
+  <a href="#viewContainer" class="skip-link" hidden>Skip to dashboard content</a>
+
+  <!-- ==================== ICON SPRITE ==================== -->
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+    <symbol id="icon-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.2"/><rect x="14" y="3" width="7" height="7" rx="1.2"/><rect x="3" y="14" width="7" height="7" rx="1.2"/><rect x="14" y="14" width="7" height="7" rx="1.2"/></symbol>
+    <symbol id="icon-invoice" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="13" y2="17"/></symbol>
+    <symbol id="icon-folder" viewBox="0 0 24 24"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></symbol>
+    <symbol id="icon-chart" viewBox="0 0 24 24"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></symbol>
+    <symbol id="icon-briefcase" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></symbol>
+    <symbol id="icon-message" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></symbol>
+    <symbol id="icon-settings" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></symbol>
+    <symbol id="icon-logout" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></symbol>
+    <symbol id="icon-menu" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></symbol>
+    <symbol id="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></symbol>
+    <symbol id="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></symbol>
+    <symbol id="icon-bell" viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></symbol>
+    <symbol id="icon-chevron-down" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></symbol>
+    <symbol id="icon-arrow-right" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></symbol>
+    <symbol id="icon-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></symbol>
+    <symbol id="icon-upload" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></symbol>
+    <symbol id="icon-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></symbol>
+    <symbol id="icon-plus" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></symbol>
+    <symbol id="icon-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></symbol>
+    <symbol id="icon-check-circle" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></symbol>
+    <symbol id="icon-alert" viewBox="0 0 24 24"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></symbol>
+    <symbol id="icon-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+    <symbol id="icon-lock" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+    <symbol id="icon-user" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+    <symbol id="icon-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></symbol>
+    <symbol id="icon-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.32 1.78.59 2.63a2 2 0 0 1-.45 2.11L8 9.91a16 16 0 0 0 6 6l1.45-1.25a2 2 0 0 1 2.11-.45c.85.27 1.73.47 2.63.59A2 2 0 0 1 22 16.92z"/></symbol>
+    <symbol id="icon-calendar" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></symbol>
+    <symbol id="icon-dollar" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></symbol>
+    <symbol id="icon-card" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></symbol>
+    <symbol id="icon-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></symbol>
+    <symbol id="icon-send" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></symbol>
+    <symbol id="icon-trend" viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></symbol>
+    <symbol id="icon-spark" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></symbol>
+    <symbol id="icon-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></symbol>
+    <symbol id="icon-home" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></symbol>
+  </svg>
+
+  <!-- ==================== ACCESS RESTRICTED ==================== -->
+  <div id="restricted" class="restricted" hidden>
+    <div class="restricted__topbar">
+      <a href="index.html" class="brand" aria-label="Stackly home">
+        <img class="brand__logo brand__logo--light-surface" src="images/logo/logo-stackly-on-light.png" alt="Stackly" width="346" height="100" decoding="async" />
+        <img class="brand__logo brand__logo--dark-surface" src="images/logo/logo-stackly-on-dark.png" alt="Stackly" width="346" height="100" decoding="async" />
+      </a>
+      <button class="icon-btn js-theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">
+        <svg class="icon icon-sun"><use href="#icon-sun"></use></svg>
+        <svg class="icon icon-moon"><use href="#icon-moon"></use></svg>
+      </button>
+    </div>
+    <main class="restricted__main">
+      <div class="access-card">
+        <span class="access-card__icon" aria-hidden="true"><svg class="icon"><use href="#icon-lock"></use></svg></span>
+        <span class="eyebrow">Client dashboard</span>
+        <h1>Access restricted</h1>
+        <p id="restrictedMessage">You need a client account to view this dashboard. Sign in or create an account to continue.</p>
+        <div class="access-card__actions">
+          <a href="login.html" class="btn btn--primary">Go to Login</a>
+          <a href="index.html" class="btn btn--ghost">Back to Home</a>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- ==================== APP SHELL ==================== -->
+  <div id="appShell" class="app" hidden>
+
+    <aside id="sidebar" class="sidebar" aria-label="Dashboard navigation">
+      <div class="sidebar__head">
+        <a href="index.html" class="brand brand--light" aria-label="Stackly home">
+          <img class="brand__logo" src="images/logo/logo-stackly-on-dark.png" alt="Stackly" width="346" height="100" decoding="async" />
+        </a>
+        <button class="sidebar__close js-sidebar-close" type="button" aria-label="Close menu">
+          <svg class="icon"><use href="#icon-close"></use></svg>
+        </button>
+      </div>
+
+      <div class="sidebar__profile">
+        <span class="avatar avatar--lg" data-user-initials>SC</span>
+        <span class="sidebar__profile-info">
+          <span class="sidebar__name" data-user-name>Client</span>
+          <span class="sidebar__email" data-user-email>client@example.com</span>
+        </span>
+        <span class="sidebar__role" data-user-role>Client</span>
+      </div>
+
+      <nav class="sidebar__nav" aria-label="Dashboard sections">
+        <a href="#/overview" class="nav-item" data-route="overview">
+          <svg class="icon"><use href="#icon-grid"></use></svg>Overview
+        </a>
+        <a href="#/invoices" class="nav-item" data-route="invoices">
+          <svg class="icon"><use href="#icon-invoice"></use></svg>Invoices
+        </a>
+        <a href="#/documents" class="nav-item" data-route="documents">
+          <svg class="icon"><use href="#icon-folder"></use></svg>Documents
+        </a>
+        <a href="#/reports" class="nav-item" data-route="reports">
+          <svg class="icon"><use href="#icon-chart"></use></svg>Reports
+        </a>
+        <a href="#/services" class="nav-item" data-route="services">
+          <svg class="icon"><use href="#icon-briefcase"></use></svg>Services
+        </a>
+        <a href="#/messages" class="nav-item" data-route="messages">
+          <svg class="icon"><use href="#icon-message"></use></svg>Messages
+        </a>
+        <a href="#/settings" class="nav-item" data-route="settings">
+          <svg class="icon"><use href="#icon-settings"></use></svg>Settings
+        </a>
+        <button class="nav-item nav-item--logout js-logout" type="button">
+          <svg class="icon"><use href="#icon-logout"></use></svg>Logout
+        </button>
+      </nav>
+
+      <a href="contact.html" class="sidebar__support">
+        <svg class="icon"><use href="#icon-message"></use></svg>
+        Need help? Talk to us
+      </a>
+    </aside>
+
+    <div id="sidebarBackdrop" class="backdrop" hidden></div>
+
+    <div class="main">
+      <header class="topbar">
+        <div class="topbar__left">
+          <button class="icon-btn js-sidebar-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="sidebar">
+            <svg class="icon"><use href="#icon-menu"></use></svg>
+          </button>
+          <h2 id="pageTitle" class="topbar__title">Overview</h2>
+        </div>
+
+        <div class="topbar__actions">
+          <button class="icon-btn js-theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">
+            <svg class="icon icon-sun"><use href="#icon-sun"></use></svg>
+            <svg class="icon icon-moon"><use href="#icon-moon"></use></svg>
+          </button>
+
+          <div class="dropdown-anchor">
+            <button id="bellBtn" class="icon-btn js-dropdown-toggle" type="button" data-dropdown="notifications" aria-label="Notifications" aria-haspopup="true" aria-expanded="false">
+              <svg class="icon"><use href="#icon-bell"></use></svg>
+              <span id="notificationDot" class="notification-dot" aria-hidden="true"></span>
+            </button>
+            <div id="notificationsPanel" class="dropdown-panel" hidden aria-label="Notifications">
+              <div class="dropdown-head">
+                <strong>Notifications</strong>
+                <button id="markReadBtn" type="button">Mark all read</button>
+              </div>
+              <div id="notificationList">
+                <div class="notification-item is-unread">
+                  <span class="notification-item__icon"><svg class="icon"><use href="#icon-invoice"></use></svg></span>
+                  <div><p>Invoice #INV-0047 is due in 3 days.</p><time>2 hours ago</time></div>
+                </div>
+                <div class="notification-item is-unread">
+                  <span class="notification-item__icon"><svg class="icon"><use href="#icon-chart"></use></svg></span>
+                  <div><p>Your October financial report is ready.</p><time>Yesterday</time></div>
+                </div>
+                <div class="notification-item is-unread">
+                  <span class="notification-item__icon"><svg class="icon"><use href="#icon-file"></use></svg></span>
+                  <div><p>Amara shared “Q3 Tax Summary”.</p><time>2 days ago</time></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="dropdown-anchor">
+            <button id="avatarBtn" class="avatar avatar--button js-dropdown-toggle" type="button" data-dropdown="profile" aria-label="Account menu" aria-haspopup="true" aria-expanded="false">
+              <span data-user-initials>SC</span>
+            </button>
+            <div id="profilePanel" class="dropdown-panel" hidden aria-label="Account menu">
+              <div class="profile-panel__head">
+                <span class="avatar" data-user-initials>SC</span>
+                <div>
+                  <div class="profile-panel__name" data-user-name>Client</div>
+                  <div class="profile-panel__email" data-user-email>client@example.com</div>
+                </div>
+              </div>
+              <div class="profile-menu">
+                <a href="#/settings" data-close-dropdown><svg class="icon"><use href="#icon-user"></use></svg>Profile</a>
+                <a href="#/settings" data-close-dropdown><svg class="icon"><use href="#icon-settings"></use></svg>Settings</a>
+                <div class="profile-menu__divider"></div>
+                <button type="button" class="js-logout logout-link"><svg class="icon"><use href="#icon-logout"></use></svg>Logout</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main id="viewContainer" class="content" tabindex="-1">
+
+        <!-- ==================== OVERVIEW ==================== -->
+        <section id="view-overview" class="view" hidden aria-labelledby="overview-title">
+          <div class="view-head">
+            <div>
+              <span class="eyebrow">Client workspace</span>
+              <h1 id="overview-title" class="view-title">Welcome back, <span data-user-first-name>Client</span>. <span aria-hidden="true">👋</span></h1>
+              <p id="overviewDate" class="view-subtitle">Your financial snapshot is ready.</p>
+            </div>
+            <div class="view-actions">
+              <a href="#/invoices" class="btn btn--ghost btn--sm"><svg class="icon icon--sm"><use href="#icon-invoice"></use></svg>Invoices</a>
+              <a href="#/reports" class="btn btn--primary btn--sm"><svg class="icon icon--sm"><use href="#icon-chart"></use></svg>Reports</a>
+            </div>
+          </div>
+
+          <div class="grid stat-grid">
+            <article class="card stat-card">
+              <div class="stat-card__top">
+                <span class="stat-icon"><svg class="icon"><use href="#icon-invoice"></use></svg></span>
+                <span class="trend trend--down"><svg class="icon icon--sm"><use href="#icon-clock"></use></svg>3 open</span>
+              </div>
+              <div class="stat-card__label">Invoices due</div>
+              <div class="stat-card__value" data-counter data-target="3">3</div>
+              <div class="stat-card__meta">2 pending · 1 overdue</div>
+              <svg class="sparkline sparkline--amber" viewBox="0 0 120 34" preserveAspectRatio="none" aria-hidden="true">
+                <path class="sparkline__fill" d="M0,24 L20,20 L40,26 L60,16 L80,22 L100,12 L120,18 L120,34 L0,34 Z"/>
+                <path class="sparkline__line" pathLength="1" d="M0,24 L20,20 L40,26 L60,16 L80,22 L100,12 L120,18"/>
+              </svg>
+            </article>
+
+            <article class="card stat-card">
+              <div class="stat-card__top">
+                <span class="stat-icon stat-icon--teal"><svg class="icon"><use href="#icon-dollar"></use></svg></span>
+                <span class="trend"><svg class="icon icon--sm"><use href="#icon-trend"></use></svg>-8.4%</span>
+              </div>
+              <div class="stat-card__label">Outstanding balance</div>
+              <div class="stat-card__value" data-counter data-target="12480" data-prefix="$">$12,480</div>
+              <div class="stat-card__meta">Across 3 open invoices</div>
+              <svg class="sparkline sparkline--teal" viewBox="0 0 120 34" preserveAspectRatio="none" aria-hidden="true">
+                <path class="sparkline__fill" d="M0,26 L20,22 L40,24 L60,14 L80,18 L100,10 L120,6 L120,34 L0,34 Z"/>
+                <path class="sparkline__line" pathLength="1" d="M0,26 L20,22 L40,24 L60,14 L80,18 L100,10 L120,6"/>
+              </svg>
+            </article>
+
+            <article class="card stat-card">
+              <div class="stat-card__top">
+                <span class="stat-icon stat-icon--blue"><svg class="icon"><use href="#icon-folder"></use></svg></span>
+                <span class="trend"><svg class="icon icon--sm"><use href="#icon-plus"></use></svg>3 new</span>
+              </div>
+              <div class="stat-card__label">Documents</div>
+              <div class="stat-card__value" data-counter data-target="10">10</div>
+              <div class="stat-card__meta">3 added this month</div>
+              <svg class="sparkline sparkline--blue" viewBox="0 0 120 34" preserveAspectRatio="none" aria-hidden="true">
+                <path class="sparkline__fill" d="M0,28 L20,24 L40,20 L60,22 L80,14 L100,16 L120,8 L120,34 L0,34 Z"/>
+                <path class="sparkline__line" pathLength="1" d="M0,28 L20,24 L40,20 L60,22 L80,14 L100,16 L120,8"/>
+              </svg>
+            </article>
+
+            <article class="card stat-card">
+              <div class="stat-card__top">
+                <span class="stat-icon"><svg class="icon"><use href="#icon-briefcase"></use></svg></span>
+                <span class="trend"><svg class="icon icon--sm"><use href="#icon-check"></use></svg>Healthy</span>
+              </div>
+              <div class="stat-card__label">Services active</div>
+              <div class="stat-card__value" data-counter data-target="3">3</div>
+              <div class="stat-card__meta">1 pending activation</div>
+              <svg class="sparkline" viewBox="0 0 120 34" preserveAspectRatio="none" aria-hidden="true">
+                <path class="sparkline__fill" d="M0,22 L20,20 L40,16 L60,18 L80,12 L100,14 L120,8 L120,34 L0,34 Z"/>
+                <path class="sparkline__line" pathLength="1" d="M0,22 L20,20 L40,16 L60,18 L80,12 L100,14 L120,8"/>
+              </svg>
+            </article>
+          </div>
+
+          <div class="card quick-actions">
+            <div class="card-head">
+              <div><h2>Quick actions</h2><p>Jump straight to the task.</p></div>
+            </div>
+            <div class="quick-actions__grid">
+              <a href="#/documents" class="quick-action">
+                <svg class="icon"><use href="#icon-upload"></use></svg>
+                Upload document
+                <span class="quick-action__arrow" aria-hidden="true">→</span>
+              </a>
+              <a href="#/invoices" class="quick-action">
+                <svg class="icon"><use href="#icon-card"></use></svg>
+                Pay invoice
+                <span class="quick-action__arrow" aria-hidden="true">→</span>
+              </a>
+              <a href="#/messages" class="quick-action">
+                <svg class="icon"><use href="#icon-message"></use></svg>
+                Message advisor
+                <span class="quick-action__arrow" aria-hidden="true">→</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="overview-charts">
+            <article class="card chart-card">
+              <div class="chart-head">
+                <div><h2>Monthly spending</h2><p>Last 6 months</p></div>
+                <span class="badge badge--active">+18.2%</span>
+              </div>
+              <div class="bar-chart" role="img" aria-label="Monthly spending: January $8.4k, February $9.1k, March $7.8k, April $10.2k, May $9.6k, June $11.4k.">
+                <div class="bar-chart__bars">
+                  <div class="bar-chart__item"><span class="bar-chart__value">$8.4k</span><div class="bar-chart__bar" style="--bar:70%" title="January: $8.4k"></div><span class="bar-chart__label">Jan</span></div>
+                  <div class="bar-chart__item"><span class="bar-chart__value">$9.1k</span><div class="bar-chart__bar" style="--bar:76%" title="February: $9.1k"></div><span class="bar-chart__label">Feb</span></div>
+                  <div class="bar-chart__item"><span class="bar-chart__value">$7.8k</span><div class="bar-chart__bar" style="--bar:65%" title="March: $7.8k"></div><span class="bar-chart__label">Mar</span></div>
+                  <div class="bar-chart__item"><span class="bar-chart__value">$10.2k</span><div class="bar-chart__bar" style="--bar:85%" title="April: $10.2k"></div><span class="bar-chart__label">Apr</span></div>
+                  <div class="bar-chart__item"><span class="bar-chart__value">$9.6k</span><div class="bar-chart__bar" style="--bar:80%" title="May: $9.6k"></div><span class="bar-chart__label">May</span></div>
+                  <div class="bar-chart__item"><span class="bar-chart__value">$11.4k</span><div class="bar-chart__bar" style="--bar:95%" title="June: $11.4k"></div><span class="bar-chart__label">Jun</span></div>
+                </div>
+              </div>
+            </article>
+
+            <article class="card chart-card">
+              <div class="chart-head">
+                <div><h2>Spending by category</h2><p>This month</p></div>
+              </div>
+              <div class="donut-layout">
+                <div class="donut-wrap">
+                  <div class="donut donut--spending" role="img" aria-label="Spending by category: Payroll 44%, Tax 25%, Software 18%, Operations 13%."></div>
+                  <div class="donut-center"><strong>$12.4k</strong><span>this month</span></div>
+                </div>
+                <ul class="legend">
+                  <li><span class="legend-dot" style="color: var(--chart-1)"></span>Payroll <strong>44%</strong></li>
+                  <li><span class="legend-dot" style="color: var(--chart-2)"></span>Tax <strong>25%</strong></li>
+                  <li><span class="legend-dot" style="color: var(--chart-3)"></span>Software <strong>18%</strong></li>
+                  <li><span class="legend-dot" style="color: var(--chart-4)"></span>Operations <strong>13%</strong></li>
+                </ul>
+              </div>
+            </article>
+          </div>
+
+          <article class="card chart-card" style="margin-top: 1rem;">
+            <div class="chart-head">
+              <div><h2>Cash flow</h2><p>Income vs expenses · last 6 months</p></div>
+              <div class="chart-legend">
+                <span><span class="legend-dot" style="color: var(--chart-income)"></span>Income</span>
+                <span><span class="legend-dot" style="color: var(--chart-expense)"></span>Expenses</span>
+              </div>
+            </div>
+            <div class="chart-summary">
+              <div><strong>$48.8k</strong>Income</div>
+              <div><strong>$33.1k</strong>Expenses</div>
+              <div><strong>$15.7k</strong>Net</div>
+            </div>
+            <div class="chart-scroll">
+              <svg class="line-chart" viewBox="0 0 600 240" role="img" aria-label="Cash flow from January to June. Income rises from $6.2k to $10.4k. Expenses range from $4.8k to $6.4k.">
+                <defs>
+                  <linearGradient id="incomeFill" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" class="stop-income" stop-opacity="0.26"/>
+                    <stop offset="100%" class="stop-income" stop-opacity="0"/>
+                  </linearGradient>
+                  <linearGradient id="expenseFill" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" class="stop-expense" stop-opacity="0.16"/>
+                    <stop offset="100%" class="stop-expense" stop-opacity="0"/>
+                  </linearGradient>
+                </defs>
+                <g class="chart-grid">
+                  <line x1="40" y1="20" x2="560" y2="20"/>
+                  <line x1="40" y1="76" x2="560" y2="76"/>
+                  <line x1="40" y1="133" x2="560" y2="133"/>
+                  <line x1="40" y1="190" x2="560" y2="190"/>
+                </g>
+                <g class="chart-axis">
+                  <text x="4" y="24">$12k</text>
+                  <text x="4" y="80">$8k</text>
+                  <text x="4" y="137">$4k</text>
+                  <text x="4" y="194">$0</text>
+                </g>
+                <path class="chart-area chart-area--income" d="M40,102.2 L140,85.2 L240,90.8 L340,68.2 L440,59.7 L540,42.7 L540,190 L40,190 Z"/>
+                <path class="chart-area chart-area--expense" d="M40,122 L140,116.3 L240,110.7 L340,117.7 L440,105 L540,99.3 L540,190 L40,190 Z"/>
+                <path class="chart-line chart-line--income" pathLength="1" d="M40,102.2 L140,85.2 L240,90.8 L340,68.2 L440,59.7 L540,42.7"/>
+                <path class="chart-line chart-line--expense" pathLength="1" d="M40,122 L140,116.3 L240,110.7 L340,117.7 L440,105 L540,99.3"/>
+                <g class="chart-dots">
+                  <circle class="income-dot" cx="40" cy="102.2" r="3.5"><title>January income: $6.2k</title></circle>
+                  <circle class="income-dot" cx="140" cy="85.2" r="3.5"><title>February income: $7.4k</title></circle>
+                  <circle class="income-dot" cx="240" cy="90.8" r="3.5"><title>March income: $7.0k</title></circle>
+                  <circle class="income-dot" cx="340" cy="68.2" r="3.5"><title>April income: $8.6k</title></circle>
+                  <circle class="income-dot" cx="440" cy="59.7" r="3.5"><title>May income: $9.2k</title></circle>
+                  <circle class="income-dot" cx="540" cy="42.7" r="3.5"><title>June income: $10.4k</title></circle>
+                  <circle class="expense-dot" cx="40" cy="122" r="3"><title>January expenses: $4.8k</title></circle>
+                  <circle class="expense-dot" cx="140" cy="116.3" r="3"><title>February expenses: $5.2k</title></circle>
+                  <circle class="expense-dot" cx="240" cy="110.7" r="3"><title>March expenses: $5.6k</title></circle>
+                  <circle class="expense-dot" cx="340" cy="117.7" r="3"><title>April expenses: $5.1k</title></circle>
+                  <circle class="expense-dot" cx="440" cy="105" r="3"><title>May expenses: $6.0k</title></circle>
+                  <circle class="expense-dot" cx="540" cy="99.3" r="3"><title>June expenses: $6.4k</title></circle>
+                </g>
+                <g class="chart-axis">
+                  <text x="40" y="232" text-anchor="middle">Jan</text>
+                  <text x="140" y="232" text-anchor="middle">Feb</text>
+                  <text x="240" y="232" text-anchor="middle">Mar</text>
+                  <text x="340" y="232" text-anchor="middle">Apr</text>
+                  <text x="440" y="232" text-anchor="middle">May</text>
+                  <text x="540" y="232" text-anchor="middle">Jun</text>
+                </g>
+              </svg>
+            </div>
+          </article>
+
+          <div class="overview-bottom">
+            <article class="card card-pad">
+              <div class="card-head">
+                <div><h2>Recent activity</h2><p>Latest updates across your account.</p></div>
+                <a href="#/invoices">View all</a>
+              </div>
+              <ul class="activity-list">
+                <li class="activity-item">
+                  <span class="activity-item__icon"><svg class="icon"><use href="#icon-check"></use></svg></span>
+                  <div class="activity-item__body"><p>Invoice #INV-0048 paid</p><span>2 hours ago · Monthly bookkeeping</span></div>
+                  <span class="activity-item__amount">+$850</span>
+                </li>
+                <li class="activity-item">
+                  <span class="activity-item__icon"><svg class="icon"><use href="#icon-chart"></use></svg></span>
+                  <div class="activity-item__body"><p>October financial report is ready</p><span>Yesterday · Reports</span></div>
+                  <span class="activity-item__amount">View</span>
+                </li>
+                <li class="activity-item">
+                  <span class="activity-item__icon"><svg class="icon"><use href="#icon-file"></use></svg></span>
+                  <div class="activity-item__body"><p>Amara shared “Q3 Tax Summary”</p><span>2 days ago · Documents</span></div>
+                  <span class="activity-item__amount">Open</span>
+                </li>
+                <li class="activity-item">
+                  <span class="activity-item__icon"><svg class="icon"><use href="#icon-clock"></use></svg></span>
+                  <div class="activity-item__body"><p>Payroll run scheduled for Oct 31</p><span>2 days ago · Payroll</span></div>
+                  <span class="activity-item__amount">Upcoming</span>
+                </li>
+                <li class="activity-item">
+                  <span class="activity-item__icon"><svg class="icon"><use href="#icon-calendar"></use></svg></span>
+                  <div class="activity-item__body"><p>Tax planning session confirmed</p><span>3 days ago · Advisory</span></div>
+                  <span class="activity-item__amount">Nov 12</span>
+                </li>
+              </ul>
+            </article>
+
+            <article class="card advisor-card">
+              <span class="eyebrow">Your advisor</span>
+              <div class="advisor-card__top">
+                <span class="avatar avatar--lg avatar--teal">AO</span>
+                <div><h3>Amara Okafor</h3><p>Head of Tax, CPA</p></div>
+              </div>
+              <p class="advisor-card__note">“I've reviewed your Q3 numbers. Everything reconciles cleanly — I've left a note in Messages.”</p>
+              <a href="#/messages" class="btn btn--primary btn--sm btn--block"><svg class="icon icon--sm"><use href="#icon-message"></use></svg>Message Amara</a>
+            </article>
+          </div>
+        </section>
+
+        <!-- ==================== INVOICES ==================== -->
+        <section id="view-invoices" class="view" hidden aria-labelledby="invoices-title">
+          <div class="view-head">
+            <div>
+              <span class="eyebrow">Billing</span>
+              <h1 id="invoices-title" class="view-title">Invoices</h1>
+              <p class="view-subtitle">Track payments, download receipts, and stay ahead of due dates.</p>
+            </div>
+            <div class="view-actions">
+              <button class="btn btn--ghost btn--sm" type="button" data-toast="Statement download started.">
+                <svg class="icon icon--sm"><use href="#icon-download"></use></svg>Download statement
+              </button>
+            </div>
+          </div>
+
+          <div class="invoice-charts">
+            <article class="card chart-card">
+              <div class="chart-head">
+                <div><h2>Payments by month</h2><p>Last 6 months</p></div>
+                <span class="badge badge--paid">On track</span>
+              </div>
+              <div class="bar-chart bar-chart--sm" role="img" aria-label="Payments by month: January $1.2k, February $1.8k, March $1.5k, April $2.1k, May $1.9k, June $2.4k.">
+                <div class="bar-chart__bars">
+                  <div class="bar-chart__item"><span class="bar-chart__value">$1.2k</span><div class="bar-chart__bar" style="--bar:50%" title="January: $1.2k"></div><span class="bar-chart__label">Jan</span></div>
+                  <div class="bar-chart__item"><span class="bar-chart__value">$1.8k</span><div class="bar-chart__bar" style="--bar:75%" title="February: $1.8k"></div><span class="bar-chart__label">Feb</span></div>
+                  <div class="bar-chart__item"><span class="bar-chart__value">$1.5k</span><div class="bar-chart__bar" style="--bar:62%" title="March: $1.5k"></div><span class="bar-chart__label">Mar</span></div>
+                  <div class="bar-chart__item"><span class="bar-chart__value">$2.1k</span><div class="bar-chart__bar" style="--bar:87%" title="April: $2.1k"></div><span class="bar-chart__label">Apr</span></div>
+                  <div class="bar-chart__item"><span class="bar-chart__value">$1.9k</span><div class="bar-chart__bar" style="--bar:79%" title="May: $1.9k"></div><span class="bar-chart__label">May</span></div>
+                  <div class="bar-chart__item"><span class="bar-chart__value">$2.4k</span><div class="bar-chart__bar" style="--bar:100%" title="June: $2.4k"></div><span class="bar-chart__label">Jun</span></div>
+                </div>
+              </div>
+            </article>
+
+            <article class="card chart-card">
+              <div class="chart-head">
+                <div><h2>Paid vs pending</h2><p>Invoice status overview</p></div>
+              </div>
+              <div class="donut-layout">
+                <div class="donut-wrap">
+                  <div class="donut donut--paid" role="img" aria-label="Invoice status: 63% paid, 25% pending, 12% overdue."></div>
+                  <div class="donut-center"><strong>63%</strong><span>paid</span></div>
+                </div>
+                <ul class="legend">
+                  <li><span class="legend-dot" style="color: var(--paid)"></span>Paid <strong>63%</strong></li>
+                  <li><span class="legend-dot" style="color: var(--pending)"></span>Pending <strong>25%</strong></li>
+                  <li><span class="legend-dot" style="color: var(--overdue)"></span>Overdue <strong>12%</strong></li>
+                </ul>
+              </div>
+            </article>
+          </div>
+
+          <div class="card table-card">
+            <div class="table-toolbar">
+              <div class="filter-tabs" role="group" aria-label="Filter invoices">
+                <button class="filter-tab js-invoice-filter is-active" type="button" data-filter="all" aria-pressed="true">All</button>
+                <button class="filter-tab js-invoice-filter" type="button" data-filter="paid" aria-pressed="false">Paid</button>
+                <button class="filter-tab js-invoice-filter" type="button" data-filter="pending" aria-pressed="false">Pending</button>
+                <button class="filter-tab js-invoice-filter" type="button" data-filter="overdue" aria-pressed="false">Overdue</button>
+              </div>
+              <span id="invoiceCount" class="table-count" aria-live="polite">Loading invoices…</span>
+            </div>
+            <div class="table-wrap">
+              <table class="data-table">
+                <caption class="sr-only">Your invoices</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Invoice #</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Amount</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody id="invoiceRows"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== DOCUMENTS ==================== -->
+        <section id="view-documents" class="view" hidden aria-labelledby="documents-title">
+          <div class="view-head">
+            <div>
+              <span class="eyebrow">Files</span>
+              <h1 id="documents-title" class="view-title">Documents</h1>
+              <p class="view-subtitle">Everything your team has shared, in one secure place.</p>
+            </div>
+            <div class="view-actions">
+              <button id="uploadBtn" class="btn btn--primary btn--sm" type="button"><svg class="icon icon--sm"><use href="#icon-upload"></use></svg>Upload document</button>
+            </div>
+          </div>
+
+          <div class="doc-toolbar">
+            <div class="search">
+              <svg class="icon"><use href="#icon-search"></use></svg>
+              <label class="sr-only" for="documentSearch">Search documents</label>
+              <input id="documentSearch" type="search" placeholder="Search documents..." autocomplete="off" />
+            </div>
+            <span id="documentCount" class="table-count" aria-live="polite">Loading documents…</span>
+            <input id="fileInput" type="file" accept=".pdf,.doc,.docx,.xls,.xlsx,.csv" hidden />
+          </div>
+
+          <div class="doc-layout">
+            <div>
+              <div id="documentGrid" class="doc-grid"></div>
+              <div id="docEmpty" class="empty-state" hidden>No documents match your search.</div>
+            </div>
+
+            <aside class="doc-side">
+              <div class="card doc-storage">
+                <div class="card-head"><div><h2>Storage by file type</h2><p>2.4 GB of 10 GB used</p></div></div>
+                <div class="storage-list" style="margin-top: 0.9rem;">
+                  <div class="storage-row"><div class="storage-row__head"><span>PDF documents</span><strong>42%</strong></div><div class="storage-track"><div class="storage-fill" style="--value:42%; --fill:#EF4444;"></div></div></div>
+                  <div class="storage-row"><div class="storage-row__head"><span>Spreadsheets</span><strong>31%</strong></div><div class="storage-track"><div class="storage-fill" style="--value:31%; --fill:#10B981;"></div></div></div>
+                  <div class="storage-row"><div class="storage-row__head"><span>Images</span><strong>14%</strong></div><div class="storage-track"><div class="storage-fill" style="--value:14%; --fill:#3B82F6;"></div></div></div>
+                  <div class="storage-row"><div class="storage-row__head"><span>Other</span><strong>13%</strong></div><div class="storage-track"><div class="storage-fill" style="--value:13%; --fill:#F59E0B;"></div></div></div>
+                </div>
+              </div>
+
+              <div class="card doc-upload-activity">
+                <div class="card-head"><div><h2>Upload activity</h2><p>Files added this month</p></div></div>
+                <svg class="sparkline sparkline--blue" viewBox="0 0 120 34" preserveAspectRatio="none" aria-hidden="true">
+                  <path class="sparkline__fill" d="M0,26 L20,22 L40,18 L60,20 L80,12 L100,16 L120,8 L120,34 L0,34 Z"/>
+                  <path class="sparkline__line" pathLength="1" d="M0,26 L20,22 L40,18 L60,20 L80,12 L100,16 L120,8"/>
+                </svg>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <!-- ==================== REPORTS ==================== -->
+        <section id="view-reports" class="view" hidden aria-labelledby="reports-title">
+          <div class="view-head">
+            <div>
+              <span class="eyebrow">Financial reporting</span>
+              <h1 id="reports-title" class="view-title">Reports</h1>
+              <p class="view-subtitle">Your financial statements, summaries, and exports in one place.</p>
+            </div>
+            <div class="view-actions">
+              <button id="generateReportBtn" class="btn btn--primary btn--sm js-generate-report" type="button"><svg class="icon icon--sm"><use href="#icon-plus"></use></svg>Generate new report</button>
+            </div>
+          </div>
+
+          <article class="card reports-feature">
+            <div class="card-head">
+              <div><h2>Profit &amp; Loss</h2><p>Generated Oct 1, 2026 · January–September</p></div>
+              <span class="badge badge--ready">Ready</span>
+            </div>
+            <div class="chart-summary">
+              <div><strong>$98.4k</strong>Revenue</div>
+              <div><strong>$71.2k</strong>Expenses</div>
+              <div><strong>$27.2k</strong>Net profit</div>
+            </div>
+            <div class="chart-scroll">
+              <svg class="line-chart" viewBox="0 0 600 220" role="img" aria-label="Revenue versus expenses over the last six months. Revenue grows from $12.4k to $16.8k; expenses rise from $9.1k to $11.2k.">
+                <defs>
+                  <linearGradient id="incomeFill2" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" class="stop-income" stop-opacity="0.24"/>
+                    <stop offset="100%" class="stop-income" stop-opacity="0"/>
+                  </linearGradient>
+                  <linearGradient id="expenseFill2" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" class="stop-expense" stop-opacity="0.14"/>
+                    <stop offset="100%" class="stop-expense" stop-opacity="0"/>
+                  </linearGradient>
+                </defs>
+                <g class="chart-grid">
+                  <line x1="40" y1="20" x2="560" y2="20"/>
+                  <line x1="40" y1="73" x2="560" y2="73"/>
+                  <line x1="40" y1="127" x2="560" y2="127"/>
+                  <line x1="40" y1="180" x2="560" y2="180"/>
+                </g>
+                <g class="chart-axis">
+                  <text x="4" y="24">$18k</text>
+                  <text x="4" y="77">$12k</text>
+                  <text x="4" y="131">$6k</text>
+                  <text x="4" y="184">$0</text>
+                </g>
+                <path class="chart-area chart-area--income" style="fill:url(#incomeFill2)" d="M40,69.8 L140,63.6 L240,66.2 L340,50.2 L440,44.9 L540,30.7 L540,180 L40,180 Z"/>
+                <path class="chart-area chart-area--expense" style="fill:url(#expenseFill2)" d="M40,99.1 L140,92.9 L240,95.6 L340,89.3 L440,84 L540,80.4 L540,180 L40,180 Z"/>
+                <path class="chart-line chart-line--income" pathLength="1" d="M40,69.8 L140,63.6 L240,66.2 L340,50.2 L440,44.9 L540,30.7"/>
+                <path class="chart-line chart-line--expense" pathLength="1" d="M40,99.1 L140,92.9 L240,95.6 L340,89.3 L440,84 L540,80.4"/>
+                <g class="chart-dots">
+                  <circle class="income-dot" cx="40" cy="69.8" r="3.5"><title>Jan revenue: $12.4k</title></circle>
+                  <circle class="income-dot" cx="140" cy="63.6" r="3.5"><title>Feb revenue: $13.1k</title></circle>
+                  <circle class="income-dot" cx="240" cy="66.2" r="3.5"><title>Mar revenue: $12.8k</title></circle>
+                  <circle class="income-dot" cx="340" cy="50.2" r="3.5"><title>Apr revenue: $14.6k</title></circle>
+                  <circle class="income-dot" cx="440" cy="44.9" r="3.5"><title>May revenue: $15.2k</title></circle>
+                  <circle class="income-dot" cx="540" cy="30.7" r="3.5"><title>Jun revenue: $16.8k</title></circle>
+                  <circle class="expense-dot" cx="40" cy="99.1" r="3"><title>Jan expenses: $9.1k</title></circle>
+                  <circle class="expense-dot" cx="140" cy="92.9" r="3"><title>Feb expenses: $9.8k</title></circle>
+                  <circle class="expense-dot" cx="240" cy="95.6" r="3"><title>Mar expenses: $9.5k</title></circle>
+                  <circle class="expense-dot" cx="340" cy="89.3" r="3"><title>Apr expenses: $10.2k</title></circle>
+                  <circle class="expense-dot" cx="440" cy="84" r="3"><title>May expenses: $10.8k</title></circle>
+                  <circle class="expense-dot" cx="540" cy="80.4" r="3"><title>Jun expenses: $11.2k</title></circle>
+                </g>
+                <g class="chart-axis">
+                  <text x="40" y="212" text-anchor="middle">Jan</text>
+                  <text x="140" y="212" text-anchor="middle">Feb</text>
+                  <text x="240" y="212" text-anchor="middle">Mar</text>
+                  <text x="340" y="212" text-anchor="middle">Apr</text>
+                  <text x="440" y="212" text-anchor="middle">May</text>
+                  <text x="540" y="212" text-anchor="middle">Jun</text>
+                </g>
+              </svg>
+            </div>
+            <div class="report-meta"><span>Prepared by Stackly</span><span>PDF · 2.1 MB</span></div>
+            <div class="report-card__actions" style="margin-top: 0.75rem;">
+              <button class="btn btn--ghost btn--sm js-report-action" type="button" data-action="view" data-report="Profit &amp; Loss"><svg class="icon icon--sm"><use href="#icon-file"></use></svg>View</button>
+              <button class="btn btn--outline btn--sm js-report-action" type="button" data-action="export" data-report="Profit &amp; Loss"><svg class="icon icon--sm"><use href="#icon-download"></use></svg>Export</button>
+            </div>
+          </article>
+
+          <div id="reportsGrid" class="reports-grid">
+            <article class="card report-card">
+              <div class="report-card__top">
+                <span class="report-card__icon"><svg class="icon"><use href="#icon-file"></use></svg></span>
+                <div><h3>Balance Sheet</h3><p>Generated Sep 30, 2026</p></div>
+                <span class="badge badge--ready">Ready</span>
+              </div>
+              <svg class="sparkline sparkline--teal" viewBox="0 0 120 34" preserveAspectRatio="none" aria-hidden="true">
+                <path class="sparkline__fill" d="M0,26 L20,22 L40,24 L60,16 L80,18 L100,10 L120,8 L120,34 L0,34 Z"/>
+                <path class="sparkline__line" pathLength="1" d="M0,26 L20,22 L40,24 L60,16 L80,18 L100,10 L120,8"/>
+              </svg>
+              <div class="report-card__actions">
+                <button class="btn btn--ghost btn--sm js-report-action" type="button" data-action="view" data-report="Balance Sheet">View</button>
+                <button class="btn btn--outline btn--sm js-report-action" type="button" data-action="export" data-report="Balance Sheet">Export</button>
+              </div>
+            </article>
+
+            <article class="card report-card">
+              <div class="report-card__top">
+                <span class="report-card__icon"><svg class="icon"><use href="#icon-trend"></use></svg></span>
+                <div><h3>Cash Flow</h3><p>Generated Sep 30, 2026</p></div>
+                <span class="badge badge--ready">Ready</span>
+              </div>
+              <svg class="sparkline sparkline--blue" viewBox="0 0 120 34" preserveAspectRatio="none" aria-hidden="true">
+                <path class="sparkline__fill" d="M0,28 L20,24 L40,20 L60,22 L80,14 L100,16 L120,8 L120,34 L0,34 Z"/>
+                <path class="sparkline__line" pathLength="1" d="M0,28 L20,24 L40,20 L60,22 L80,14 L100,16 L120,8"/>
+              </svg>
+              <div class="report-card__actions">
+                <button class="btn btn--ghost btn--sm js-report-action" type="button" data-action="view" data-report="Cash Flow">View</button>
+                <button class="btn btn--outline btn--sm js-report-action" type="button" data-action="export" data-report="Cash Flow">Export</button>
+              </div>
+            </article>
+
+            <article class="card report-card">
+              <div class="report-card__top">
+                <span class="report-card__icon"><svg class="icon"><use href="#icon-shield"></use></svg></span>
+                <div><h3>Tax Summary</h3><p>Generated Sep 15, 2026</p></div>
+                <span class="badge badge--ready">Ready</span>
+              </div>
+              <svg class="sparkline sparkline--amber" viewBox="0 0 120 34" preserveAspectRatio="none" aria-hidden="true">
+                <path class="sparkline__fill" d="M0,24 L20,20 L40,26 L60,16 L80,22 L100,12 L120,18 L120,34 L0,34 Z"/>
+                <path class="sparkline__line" pathLength="1" d="M0,24 L20,20 L40,26 L60,16 L80,22 L100,12 L120,18"/>
+              </svg>
+              <div class="report-card__actions">
+                <button class="btn btn--ghost btn--sm js-report-action" type="button" data-action="view" data-report="Tax Summary">View</button>
+                <button class="btn btn--outline btn--sm js-report-action" type="button" data-action="export" data-report="Tax Summary">Export</button>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- ==================== SERVICES ==================== -->
+        <section id="view-services" class="view" hidden aria-labelledby="services-title">
+          <div class="view-head">
+            <div>
+              <span class="eyebrow">Your plan</span>
+              <h1 id="services-title" class="view-title">Services</h1>
+              <p class="view-subtitle">The finance work we're handling for you, and how it's going.</p>
+            </div>
+            <div class="view-actions"><a href="services.html" class="btn btn--ghost btn--sm">Browse all services</a></div>
+          </div>
+
+          <div class="card service-summary">
+            <span class="summary-chip"><svg class="icon icon--sm"><use href="#icon-check-circle"></use></svg><span><strong>3</strong> Active</span></span>
+            <span class="summary-chip"><svg class="icon icon--sm"><use href="#icon-clock"></use></svg><span><strong>1</strong> Pending</span></span>
+            <span class="summary-chip"><svg class="icon icon--sm"><use href="#icon-calendar"></use></svg><span>Next renewal <strong>Nov 1</strong></span></span>
+            <span class="summary-spark">
+              <svg class="sparkline sparkline--teal" viewBox="0 0 120 30" preserveAspectRatio="none" aria-hidden="true">
+                <path class="sparkline__fill" d="M0,24 L20,20 L40,22 L60,14 L80,16 L100,10 L120,6 L120,30 L0,30 Z"/>
+                <path class="sparkline__line" pathLength="1" d="M0,24 L20,20 L40,22 L60,14 L80,16 L100,10 L120,6"/>
+              </svg>
+              <span class="sr-only">Engagement trend is improving.</span>
+            </span>
+          </div>
+
+          <div class="services-grid">
+            <article class="card service-card">
+              <div class="service-card__top">
+                <span class="service-icon"><svg class="icon"><use href="#icon-file"></use></svg></span>
+                <div><h2 class="service-card__title">Bookkeeping</h2><span class="badge badge--active">Active</span></div>
+              </div>
+              <p class="service-card__desc">Monthly reconciliation, transaction categorization, and clean monthly reporting.</p>
+              <div class="service-card__bottom">
+                <div class="ring" role="img" aria-label="Bookkeeping engagement 82%">
+                  <svg viewBox="0 0 42 42" aria-hidden="true"><circle class="ring__track" cx="21" cy="21" r="15.915"/><circle class="ring__value" cx="21" cy="21" r="15.915" style="--dash:82; --gap:18"/></svg>
+                  <span class="ring__label">82%</span>
+                </div>
+                <div class="service-card__info"><strong>Engagement</strong>Renews Nov 1, 2026</div>
+              </div>
+              <div class="service-card__actions">
+                <button class="btn btn--ghost btn--sm js-service-action" type="button" data-action="manage" data-service="Bookkeeping">Manage</button>
+                <button class="btn btn--danger btn--sm js-service-action" type="button" data-action="cancel" data-service="Bookkeeping">Cancel</button>
+              </div>
+            </article>
+
+            <article class="card service-card">
+              <div class="service-card__top">
+                <span class="service-icon"><svg class="icon"><use href="#icon-shield"></use></svg></span>
+                <div><h2 class="service-card__title">Tax Preparation</h2><span class="badge badge--active">Active</span></div>
+              </div>
+              <p class="service-card__desc">Year-round planning, quarterly estimates, and annual filing handled by our tax team.</p>
+              <div class="service-card__bottom">
+                <div class="ring" role="img" aria-label="Tax Preparation engagement 45%">
+                  <svg viewBox="0 0 42 42" aria-hidden="true"><circle class="ring__track" cx="21" cy="21" r="15.915"/><circle class="ring__value" cx="21" cy="21" r="15.915" style="--dash:45; --gap:55"/></svg>
+                  <span class="ring__label">45%</span>
+                </div>
+                <div class="service-card__info"><strong>Engagement</strong>Renews Jan 15, 2027</div>
+              </div>
+              <div class="service-card__actions">
+                <button class="btn btn--ghost btn--sm js-service-action" type="button" data-action="manage" data-service="Tax Preparation">Manage</button>
+                <button class="btn btn--danger btn--sm js-service-action" type="button" data-action="cancel" data-service="Tax Preparation">Cancel</button>
+              </div>
+            </article>
+
+            <article class="card service-card">
+              <div class="service-card__top">
+                <span class="service-icon"><svg class="icon"><use href="#icon-card"></use></svg></span>
+                <div><h2 class="service-card__title">Payroll</h2><span class="badge badge--active">Active</span></div>
+              </div>
+              <p class="service-card__desc">On-time payroll runs, tax withholdings, and compliance for your growing team.</p>
+              <div class="service-card__bottom">
+                <div class="ring" role="img" aria-label="Payroll engagement 64%">
+                  <svg viewBox="0 0 42 42" aria-hidden="true"><circle class="ring__track" cx="21" cy="21" r="15.915"/><circle class="ring__value" cx="21" cy="21" r="15.915" style="--dash:64; --gap:36"/></svg>
+                  <span class="ring__label">64%</span>
+                </div>
+                <div class="service-card__info"><strong>Engagement</strong>Renews Nov 1, 2026</div>
+              </div>
+              <div class="service-card__actions">
+                <button class="btn btn--ghost btn--sm js-service-action" type="button" data-action="manage" data-service="Payroll">Manage</button>
+                <button class="btn btn--danger btn--sm js-service-action" type="button" data-action="cancel" data-service="Payroll">Cancel</button>
+              </div>
+            </article>
+
+            <article class="card service-card">
+              <div class="service-card__top">
+                <span class="service-icon"><svg class="icon"><use href="#icon-user"></use></svg></span>
+                <div><h2 class="service-card__title">CFO Advisory</h2><span class="badge badge--pending">Pending</span></div>
+              </div>
+              <p class="service-card__desc">Senior finance support for fundraising, board reporting, and strategic planning.</p>
+              <div class="service-card__bottom">
+                <div class="ring ring--empty" role="img" aria-label="CFO Advisory engagement 0%">
+                  <svg viewBox="0 0 42 42" aria-hidden="true"><circle class="ring__track" cx="21" cy="21" r="15.915"/><circle class="ring__value" cx="21" cy="21" r="15.915" style="--dash:0; --gap:100"/></svg>
+                  <span class="ring__label">—</span>
+                </div>
+                <div class="service-card__info"><strong>Starts soon</strong>Nov 15, 2026</div>
+              </div>
+              <div class="service-card__actions">
+                <button class="btn btn--ghost btn--sm js-service-action" type="button" data-action="manage" data-service="CFO Advisory">Manage</button>
+                <button class="btn btn--outline btn--sm" type="button" data-toast="Scope preview is a demo.">View scope</button>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- ==================== MESSAGES ==================== -->
+        <section id="view-messages" class="view" hidden aria-labelledby="messages-title">
+          <div class="view-head">
+            <div>
+              <span class="eyebrow">Advisor chat</span>
+              <h1 id="messages-title" class="view-title">Messages</h1>
+              <p class="view-subtitle">Talk directly with the people handling your finances.</p>
+            </div>
+          </div>
+
+          <div class="card chat-shell">
+            <aside class="chat-side" aria-label="Conversations">
+              <div class="chat-side__head"><h2>Conversations</h2></div>
+              <div id="conversationList" class="conversation-list"></div>
+              <div class="response-card">
+                <div class="response-card__head"><span>Avg. response time</span><strong>1.2h</strong></div>
+                <svg class="sparkline sparkline--teal" viewBox="0 0 120 30" preserveAspectRatio="none" aria-hidden="true">
+                  <path class="sparkline__fill" d="M0,24 L20,20 L40,22 L60,14 L80,16 L100,10 L120,6 L120,30 L0,30 Z"/>
+                  <path class="sparkline__line" pathLength="1" d="M0,24 L20,20 L40,22 L60,14 L80,16 L100,10 L120,6"/>
+                </svg>
+              </div>
+            </aside>
+
+            <section class="chat-main" aria-label="Message thread">
+              <div class="chat-head">
+                <span id="chatAvatar" class="avatar avatar--lg avatar--teal">AO</span>
+                <div class="chat-head__body">
+                  <div id="chatName" class="chat-head__name">Amara Okafor</div>
+                  <div id="chatRole" class="chat-head__status"><span class="online-dot"></span>Head of Tax, CPA · Online</div>
+                </div>
+              </div>
+              <div id="chatThread" class="chat-thread" aria-live="polite" aria-relevant="additions"></div>
+              <form id="chatForm" class="chat-form">
+                <label class="sr-only" for="chatInput">Message your advisor</label>
+                <input id="chatInput" type="text" placeholder="Write a message..." autocomplete="off" />
+                <button class="chat-send" type="submit" aria-label="Send message"><svg class="icon"><use href="#icon-send"></use></svg></button>
+              </form>
+            </section>
+          </div>
+        </section>
+
+        <!-- ==================== SETTINGS ==================== -->
+        <section id="view-settings" class="view" hidden aria-labelledby="settings-title">
+          <div class="view-head">
+            <div>
+              <span class="eyebrow">Account</span>
+              <h1 id="settings-title" class="view-title">Settings</h1>
+              <p class="view-subtitle">Manage your profile, notifications, and security.</p>
+            </div>
+          </div>
+
+          <div class="settings-grid">
+            <article class="card settings-card">
+              <h2>Profile</h2>
+              <p>Update how your name and email appear across Stackly.</p>
+              <div class="profile-preview">
+                <span class="avatar avatar--lg" data-user-initials>SC</span>
+                <div>
+                  <div class="profile-preview__name" data-user-name>Client</div>
+                  <div class="profile-preview__email" data-user-email>client@example.com</div>
+                  <span class="badge badge--active" data-user-role>Client</span>
+                </div>
+              </div>
+              <div class="profile-completeness">
+                <div class="profile-completeness__head"><span>Profile completeness</span><span>80%</span></div>
+                <div class="progress-track"><div class="progress-fill" style="--value:80%"></div></div>
+              </div>
+              <form id="profileForm" novalidate>
+                <div class="form-grid">
+                  <div class="field">
+                    <label for="profileName">Full name</label>
+                    <input id="profileName" name="name" type="text" autocomplete="name" required />
+                    <span class="field__error" id="profileNameError" role="alert"></span>
+                  </div>
+                  <div class="field">
+                    <label for="profileEmail">Email</label>
+                    <input id="profileEmail" name="email" type="email" autocomplete="email" required />
+                    <span class="field__error" id="profileEmailError" role="alert"></span>
+                  </div>
+                </div>
+                <button class="btn btn--primary settings-submit" type="submit">Save changes</button>
+              </form>
+            </article>
+
+            <article class="card settings-card">
+              <h2>Notifications</h2>
+              <p>Choose what lands in your inbox.</p>
+              <div class="toggle-row">
+                <div class="toggle-row__text"><strong>Email notifications</strong><span>Account updates and advisor replies.</span></div>
+                <label class="switch">
+                  <input id="prefEmail" type="checkbox" />
+                  <span class="switch__track"></span>
+                  <span class="sr-only">Email notifications</span>
+                </label>
+              </div>
+              <div class="toggle-row">
+                <div class="toggle-row__text"><strong>Invoice reminders</strong><span>Heads-up before an invoice is due.</span></div>
+                <label class="switch">
+                  <input id="prefInvoice" type="checkbox" />
+                  <span class="switch__track"></span>
+                  <span class="sr-only">Invoice reminders</span>
+                </label>
+              </div>
+              <div class="toggle-row">
+                <div class="toggle-row__text"><strong>Monthly report digest</strong><span>A monthly summary of your finances.</span></div>
+                <label class="switch">
+                  <input id="prefDigest" type="checkbox" />
+                  <span class="switch__track"></span>
+                  <span class="sr-only">Monthly report digest</span>
+                </label>
+              </div>
+            </article>
+
+            <article class="card settings-card security-card">
+              <h2>Change password</h2>
+              <p>Keep your account secure with a strong password.</p>
+              <form id="passwordForm" class="security-form" novalidate>
+                <div class="form-grid">
+                  <div class="field field--full">
+                    <label for="currentPassword">Current password</label>
+                    <input id="currentPassword" name="current-password" type="password" autocomplete="current-password" required />
+                    <span class="field__error" id="currentPasswordError" role="alert"></span>
+                  </div>
+                  <div class="field">
+                    <label for="newPassword">New password</label>
+                    <input id="newPassword" name="new-password" type="password" autocomplete="new-password" required />
+                    <span class="field__hint">At least 8 characters.</span>
+                    <span class="field__error" id="newPasswordError" role="alert"></span>
+                  </div>
+                  <div class="field">
+                    <label for="confirmPassword">Confirm password</label>
+                    <input id="confirmPassword" name="confirm-password" type="password" autocomplete="new-password" required />
+                    <span class="field__error" id="confirmPasswordError" role="alert"></span>
+                  </div>
+                </div>
+                <button class="btn btn--primary settings-submit" type="submit">Update password</button>
+              </form>
+            </article>
+          </div>
+        </section>
+
+        <!-- ==================== 404 ==================== -->
+        <section id="view-404" class="view" hidden aria-labelledby="notfound-title">
+          <div class="empty-view card">
+            <span class="empty-view__icon"><svg class="icon"><use href="#icon-alert"></use></svg></span>
+            <span class="eyebrow">404</span>
+            <h1 id="notfound-title">We couldn't find that page.</h1>
+            <p>The section you're looking for doesn't exist in your dashboard. Try the overview.</p>
+            <a href="#/overview" class="btn btn--primary">Back to Overview</a>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <div id="toastContainer" class="toast-container" aria-live="polite" aria-atomic="false"></div>
+
+  <script src="js/dashboard.js"></script>
+
+  <script src="js/redirect-404.js"></script>
+</body>
+</html>

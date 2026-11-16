@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Meet Stackly — a team of CPAs, CFAs, and finance operators helping modern businesses turn their numbers into clarity." />
+  <title>About — Stackly Finance &amp; Accounting Service</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%2310B981'/%3E%3Cpath d='M7 12l3 3 7-7' stroke='%23fff' stroke-width='2.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/about.css" />
+</head>
+<body>
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="header header--over-dark js-header">
+    <div class="container">
+      <a href="index.html" class="logo" aria-label="Stackly home">
+        <img class="logo__img logo__img--light" src="images/logo/logo-stackly-on-light.png" alt="Stackly" width="346" height="100" decoding="async" />
+        <img class="logo__img logo__img--dark" src="images/logo/logo-stackly-on-dark.png" alt="Stackly" width="346" height="100" decoding="async" />
+      </a>
+
+      <nav class="nav" aria-label="Main navigation">
+        <ul class="nav__list">
+          <li><a href="index.html" class="nav__link">Home</a></li>
+          <li><a href="services.html" class="nav__link">Services</a></li>
+          <li><a href="about.html" class="nav__link is-active" aria-current="page">About</a></li>
+          <li><a href="pricing.html" class="nav__link">Pricing</a></li>
+          <li><a href="blog.html" class="nav__link">Blog</a></li>
+          <li><a href="contact.html" class="nav__link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__actions">
+        <button class="theme-toggle js-theme-toggle" type="button" aria-label="Toggle dark mode">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5" />
+            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+          </svg>
+        </button>
+        <a href="login.html" class="btn btn--primary btn--small header__cta">Login</a>
+        <button class="menu-toggle js-menu-toggle" type="button" aria-expanded="false" aria-label="Toggle menu">
+          <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="18" x2="21" y2="18" />
+          </svg>
+          <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile-nav js-mobile-nav" aria-label="Mobile navigation">
+      <ul class="mobile-nav__list">
+        <li><a href="index.html" class="mobile-nav__link">Home</a></li>
+        <li><a href="services.html" class="mobile-nav__link">Services</a></li>
+        <li><a href="about.html" class="mobile-nav__link is-active" aria-current="page">About</a></li>
+        <li><a href="pricing.html" class="mobile-nav__link">Pricing</a></li>
+        <li><a href="blog.html" class="mobile-nav__link">Blog</a></li>
+        <li><a href="contact.html" class="mobile-nav__link">Contact</a></li>
+      </ul>
+      <a href="login.html" class="btn btn--primary btn--small mobile-nav__cta">Login</a>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ==================== HERO ==================== -->
+    <section class="about-hero js-about-hero" aria-labelledby="about-hero-title">
+      <div class="about-hero__bg">
+        <img
+          class="about-hero__img js-about-hero-img"
+          src="images/photo-1522071820081-009f0129c71c-w1400-q35.webp"
+          alt="The Stackly team collaborating around a table in a bright office"
+          width="1400"
+          height="933"
+          loading="eager"
+          decoding="async"
+          onerror="this.src='images/photo-1556761175-b413da4baf72-w800-q45.webp'"
+        />
+        <div class="about-hero__overlay" aria-hidden="true"></div>
+      </div>
+
+      <div class="container">
+        <div class="about-hero__content">
+          <nav class="about-breadcrumb" aria-label="Breadcrumb">
+            <a href="index.html">Home</a>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+            <span aria-current="page">About</span>
+          </nav>
+
+          <span class="eyebrow reveal">About Stackly</span>
+
+          <h1 id="about-hero-title" class="heading h1 about-hero__title reveal reveal--stagger-1">
+            The team behind your <span class="gradient-text">clearest numbers</span>.
+          </h1>
+          <p class="about-hero__subtitle reveal reveal--stagger-2">
+            We're a team of CPAs, CFAs, and operators who believe every business deserves clean books, clear advice, and a finance partner who genuinely cares.
+          </p>
+          <div class="btn-group about-hero__actions reveal reveal--stagger-3">
+            <a href="#contact" class="btn btn--primary">Start Free Consultation</a>
+            <a href="#team" class="btn btn--ghost">Meet the team</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-hero__stats">
+        <div class="container">
+          <div class="about-hero__stats-inner reveal reveal--stagger-4">
+            <div class="about-hero__chip">
+              <span class="about-hero__chip-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </span>
+              <div>
+                <div class="about-hero__chip-value">2,000+</div>
+                <div class="about-hero__chip-label">clients served</div>
+              </div>
+            </div>
+
+            <div class="about-hero__chip">
+              <span class="about-hero__chip-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+              </span>
+              <div>
+                <div class="about-hero__chip-value">15+ yrs</div>
+                <div class="about-hero__chip-label">of expertise</div>
+              </div>
+            </div>
+
+            <div class="about-hero__chip">
+              <span class="about-hero__chip-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              </span>
+              <div>
+                <div class="about-hero__chip-value">$850M</div>
+                <div class="about-hero__chip-label">assets managed</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-seal" aria-hidden="true">
+        <svg class="about-seal__ring" viewBox="0 0 120 120" aria-hidden="true">
+          <defs>
+            <path id="about-seal-path" d="M 60,60 m -44,0 a 44,44 0 1,1 88,0 a 44,44 0 1,1 -88,0" />
+          </defs>
+          <circle cx="60" cy="60" r="57" fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="1" />
+          <circle cx="60" cy="60" r="50" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1" />
+          <text>
+            <textPath href="#about-seal-path" startOffset="0" textLength="276" lengthAdjust="spacing">EST. 2011 • STACKLY • EST. 2011 • STACKLY •</textPath>
+          </text>
+        </svg>
+        <span class="about-seal__center">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </span>
+      </div>
+    </section>
+
+    <!-- ==================== OUR STORY ==================== -->
+    <section id="story" class="section" aria-labelledby="story-title">
+      <div class="container">
+        <div class="section-header section-header--center reveal">
+          <span class="eyebrow">Our story</span>
+          <h2 id="story-title" class="heading h2">From two desks to a full-stack firm.</h2>
+          <p class="text-body">Fifteen years of helping businesses turn financial chaos into calm, one milestone at a time.</p>
+        </div>
+
+        <div class="about-timeline reveal">
+          <div class="about-timeline__line" aria-hidden="true"></div>
+
+          <article class="about-milestone">
+            <div class="about-milestone__year"><span>2011</span></div>
+            <div class="about-milestone__card">
+              <img
+                class="about-milestone__thumb"
+                src="images/photo-1554224155-6726b3ff858f-w400-q55.webp"
+                alt="Founding desk with accounting records and a calculator"
+                width="400"
+                height="250"
+                loading="lazy"
+                decoding="async"
+                onerror="this.src='images/photo-1450101499163-c8848c66ca85-w400-q55.webp'"
+              />
+              <h3 class="about-milestone__title">Founded</h3>
+              <p class="about-milestone__text">Two accountants, one rented desk, and a promise to make books make sense.</p>
+            </div>
+          </article>
+
+          <article class="about-milestone">
+            <div class="about-milestone__year"><span>2015</span></div>
+            <div class="about-milestone__card">
+              <img
+                class="about-milestone__thumb"
+                src="images/photo-1521737711867-e3b97375f902-w400-q55.webp"
+                alt="Stackly team celebrating a milestone in the office"
+                width="400"
+                height="250"
+                loading="lazy"
+                decoding="async"
+                onerror="this.src='images/photo-1556761175-b413da4baf72-w400-q55.webp'"
+              />
+              <h3 class="about-milestone__title">100 clients</h3>
+              <p class="about-milestone__text">Word of mouth took us across industries and into our first 100 partnerships.</p>
+            </div>
+          </article>
+
+          <article class="about-milestone">
+            <div class="about-milestone__year"><span>2018</span></div>
+            <div class="about-milestone__card">
+              <img
+                class="about-milestone__thumb"
+                src="images/photo-1573164713988-8665fc963095-w400-q55.webp"
+                alt="Modern office representing Stackly's global expansion"
+                width="400"
+                height="250"
+                loading="lazy"
+                decoding="async"
+                onerror="this.src='images/photo-1556761175-b413da4baf72-w400-q55.webp'"
+              />
+              <h3 class="about-milestone__title">Global</h3>
+              <p class="about-milestone__text">Remote-first advisors began supporting clients across 12 countries.</p>
+            </div>
+          </article>
+
+          <article class="about-milestone">
+            <div class="about-milestone__year"><span>2022</span></div>
+            <div class="about-milestone__card">
+              <img
+                class="about-milestone__thumb"
+                src="images/photo-1460925895917-afdab827c52f-w400-q55.webp"
+                alt="Financial analytics dashboard showing managed assets"
+                width="400"
+                height="250"
+                loading="lazy"
+                decoding="async"
+                onerror="this.src='images/photo-1526304640581-d334cdbbf45e-w500-q50.webp'"
+              />
+              <h3 class="about-milestone__title">$500M managed</h3>
+              <p class="about-milestone__text">A milestone year for assets under management and CFO advisory.</p>
+            </div>
+          </article>
+
+          <article class="about-milestone">
+            <div class="about-milestone__year"><span>2026</span></div>
+            <div class="about-milestone__card">
+              <img
+                class="about-milestone__thumb"
+                src="images/photo-1556761175-b413da4baf72-w400-q55.webp"
+                alt="Stackly team collaborating in a modern meeting room"
+                width="400"
+                height="250"
+                loading="lazy"
+                decoding="async"
+                onerror="this.src='images/photo-1521737711867-e3b97375f902-w400-q55.webp'"
+              />
+              <h3 class="about-milestone__title">Today</h3>
+              <p class="about-milestone__text">A 40-person team serving 2,000+ businesses with clarity and care.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== MISSION, VISION & VALUES ==================== -->
+    <section id="mission" class="section" aria-labelledby="mission-title">
+      <div class="container">
+        <div class="section-header section-header--center reveal">
+          <span class="eyebrow">What drives us</span>
+          <h2 id="mission-title" class="heading h2">Mission, vision, and the values we live by.</h2>
+          <p class="text-body">The principles behind every reconciliation, recommendation, and conversation.</p>
+        </div>
+
+        <div class="about-pillars">
+          <article class="glass about-pillar reveal">
+            <span class="about-pillar__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/></svg>
+            </span>
+            <span class="about-pillar__label">Our mission</span>
+            <h3 class="about-pillar__title">Financial clarity for every business.</h3>
+            <p class="about-pillar__text">To give every business the clarity, confidence, and calm of a world-class finance team — without the complexity or the overhead.</p>
+          </article>
+
+          <article class="glass about-pillar reveal reveal--stagger-1">
+            <span class="about-pillar__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            </span>
+            <span class="about-pillar__label">Our vision</span>
+            <h3 class="about-pillar__title">The most trusted finance partner.</h3>
+            <p class="about-pillar__text">To be the finance partner modern businesses turn to first — from their first invoice to global scale, with advice they can act on.</p>
+          </article>
+        </div>
+
+        <div class="about-values">
+          <article class="card about-value reveal reveal--stagger-1">
+            <span class="about-value__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+            </span>
+            <h3 class="about-value__title">Integrity</h3>
+            <p class="about-value__text">We tell you what you need to hear, not just what sounds good.</p>
+          </article>
+
+          <article class="card about-value reveal reveal--stagger-2">
+            <span class="about-value__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/></svg>
+            </span>
+            <h3 class="about-value__title">Precision</h3>
+            <p class="about-value__text">Every number is checked, reconciled, and ready before it reaches you.</p>
+          </article>
+
+          <article class="card about-value reveal reveal--stagger-3">
+            <span class="about-value__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </span>
+            <h3 class="about-value__title">Partnership</h3>
+            <p class="about-value__text">Your goals become our goals. We're in the details with you.</p>
+          </article>
+
+          <article class="card about-value reveal reveal--stagger-4">
+            <span class="about-value__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.74V17h8v-2.26A7 7 0 0 0 12 2z"/></svg>
+            </span>
+            <h3 class="about-value__title">Innovation</h3>
+            <p class="about-value__text">We use modern tools and better workflows to make finance feel effortless.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== WHY CHOOSE US ==================== -->
+    <section id="why" class="section" aria-labelledby="why-title">
+      <div class="container">
+        <div class="about-why">
+          <div class="reveal">
+            <span class="eyebrow">Why Stackly</span>
+            <h2 id="why-title" class="heading h2" style="margin-top: 1rem;">A partner that treats your business like its own.</h2>
+            <p class="text-body" style="margin-top: 1rem;">
+              We combine decades of accounting experience with modern tools and a genuinely human approach. No handoffs, no black boxes — just a team that knows your numbers and cares about your outcome.
+            </p>
+            <ul class="about__list">
+              <li class="about__item">
+                <span class="about__check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
+                Dedicated accounting manager for every client
+              </li>
+              <li class="about__item">
+                <span class="about__check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
+                Transparent, flat-rate pricing with no surprises
+              </li>
+              <li class="about__item">
+                <span class="about__check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
+                Real-time dashboards and monthly performance reviews
+              </li>
+              <li class="about__item">
+                <span class="about__check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
+                Bank-level security and encrypted document sharing
+              </li>
+              <li class="about__item">
+                <span class="about__check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
+                Scalable support from seed stage to enterprise
+              </li>
+            </ul>
+          </div>
+
+          <div class="about-why__media reveal reveal--stagger-1">
+            <div class="about-why__frame">
+              <img
+                src="images/photo-1573164713988-8665fc963095-w1000-q40.webp"
+                alt="Stackly advisors reviewing financial plans in a modern office"
+                width="1000"
+                height="750"
+                loading="lazy"
+                decoding="async"
+                onerror="this.src='images/photo-1556761175-b413da4baf72-w800-q45.webp'"
+              />
+            </div>
+            <div class="about-why__chip">
+              <span class="about-why__chip-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              </span>
+              <div>
+                <div class="about-why__chip-value"><span class="js-counter" data-target="99.9" data-suffix="%" data-decimals="1">0</span></div>
+                <div class="about-why__chip-label">accuracy rate</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== LEADERSHIP TEAM ==================== -->
+    <section id="team" class="section" aria-labelledby="team-title">
+      <div class="container">
+        <div class="section-header section-header--center reveal">
+          <span class="eyebrow">Leadership</span>
+          <h2 id="team-title" class="heading h2">Experts who have been in your seat.</h2>
+          <p class="text-body">Operators, advisors, and accountants who understand the pressure behind every number.</p>
+        </div>
+
+        <div class="team__grid">
+          <article class="card team-card reveal reveal--stagger-1">
+            <div class="team-card__photo">
+              <img
+                src="images/photo-1560250097-0b93528c311a-w400-q70.webp"
+                alt="David Park, Founder and CEO of Stackly"
+                width="400"
+                height="400"
+                loading="lazy"
+                decoding="async"
+                onerror="this.src='images/photo-1507003211169-0a1dd7228f2d-w400-q70.webp'"
+              />
+              <div class="team-card__social">
+                <a href="404.html" aria-label="David Park LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+                <a href="404.html" aria-label="David Park X"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+              </div>
+            </div>
+            <div class="team-card__info">
+              <h3 class="team-card__name">David Park</h3>
+              <p class="team-card__role">Founder &amp; CEO, CPA</p>
+              <p class="about-leader__bio">20 years building finance teams for high-growth companies.</p>
+            </div>
+          </article>
+
+          <article class="card team-card reveal reveal--stagger-2">
+            <div class="team-card__photo">
+              <img
+                src="images/photo-1573496359142-b8d87734a5a2-w400-q70.webp"
+                alt="Amara Okafor, Head of Tax at Stackly"
+                width="400"
+                height="400"
+                loading="lazy"
+                decoding="async"
+                onerror="this.src='images/photo-1580489944761-15a19d654956-w400-q70.webp'"
+              />
+              <div class="team-card__social">
+                <a href="404.html" aria-label="Amara Okafor LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+                <a href="404.html" aria-label="Amara Okafor X"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+              </div>
+            </div>
+            <div class="team-card__info">
+              <h3 class="team-card__name">Amara Okafor</h3>
+              <p class="team-card__role">Head of Tax, CPA</p>
+              <p class="about-leader__bio">Specializes in multi-state and cross-border tax strategy.</p>
+            </div>
+          </article>
+
+          <article class="card team-card reveal reveal--stagger-3">
+            <div class="team-card__photo">
+              <img
+                src="images/photo-1507003211169-0a1dd7228f2d-w400-q70.webp"
+                alt="James Whitfield, CFO Advisory Lead at Stackly"
+                width="400"
+                height="400"
+                loading="lazy"
+                decoding="async"
+                onerror="this.src='images/photo-1560250097-0b93528c311a-w400-q70.webp'"
+              />
+              <div class="team-card__social">
+                <a href="404.html" aria-label="James Whitfield LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+                <a href="404.html" aria-label="James Whitfield X"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+              </div>
+            </div>
+            <div class="team-card__info">
+              <h3 class="team-card__name">James Whitfield</h3>
+              <p class="team-card__role">CFO Advisory Lead, CFA</p>
+              <p class="about-leader__bio">Former investment banker turned startup finance partner.</p>
+            </div>
+          </article>
+
+          <article class="card team-card reveal reveal--stagger-4">
+            <div class="team-card__photo">
+              <img
+                src="images/photo-1580489944761-15a19d654956-w400-q70.webp"
+                alt="Priya Malhotra, Operations Head at Stackly"
+                width="400"
+                height="400"
+                loading="lazy"
+                decoding="async"
+                onerror="this.src='images/photo-1573496359142-b8d87734a5a2-w400-q70.webp'"
+              />
+              <div class="team-card__social">
+                <a href="404.html" aria-label="Priya Malhotra LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+                <a href="404.html" aria-label="Priya Malhotra X"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+              </div>
+            </div>
+            <div class="team-card__info">
+              <h3 class="team-card__name">Priya Malhotra</h3>
+              <p class="team-card__role">Operations Head</p>
+              <p class="about-leader__bio">Keeps every engagement on time, on scope, and on budget.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== ACHIEVEMENTS ==================== -->
+    <section id="achievements" class="section" aria-labelledby="achievements-title">
+      <div class="container">
+        <div class="section-header section-header--center reveal">
+          <span class="eyebrow">Certifications &amp; awards</span>
+          <h2 id="achievements-title" class="heading h2">Certified &amp; recognized.</h2>
+          <p class="text-body">Credentials that reflect our commitment to accuracy, security, and service.</p>
+        </div>
+
+        <div class="about-awards reveal">
+          <article class="card about-award">
+            <span class="about-award__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+            </span>
+            <h3 class="about-award__title">CPA Firm</h3>
+            <p class="about-award__text">Licensed &amp; insured</p>
+          </article>
+
+          <article class="card about-award">
+            <span class="about-award__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </span>
+            <h3 class="about-award__title">ISO 27001</h3>
+            <p class="about-award__text">Security certified</p>
+          </article>
+
+          <article class="card about-award">
+            <span class="about-award__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="8" y2="10"/><line x1="12" y1="10" x2="12" y2="10"/><line x1="16" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="8" y2="14"/><line x1="12" y1="14" x2="12" y2="14"/><line x1="16" y1="14" x2="16" y2="14"/><line x1="8" y1="18" x2="16" y2="18"/></svg>
+            </span>
+            <h3 class="about-award__title">QuickBooks ProAdvisor</h3>
+            <p class="about-award__text">Elite partner</p>
+          </article>
+
+          <article class="card about-award">
+            <span class="about-award__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
+            </span>
+            <h3 class="about-award__title">Xero Partner</h3>
+            <p class="about-award__text">Gold certified</p>
+          </article>
+        </div>
+
+        <div class="about-achievements__stats reveal reveal--stagger-1">
+          <div>
+            <div class="about-achievements__value"><span class="js-counter" data-target="18" data-suffix="+">0</span></div>
+            <div class="about-achievements__label">Awards earned</div>
+          </div>
+          <div>
+            <div class="about-achievements__value"><span class="js-counter" data-target="12">0</span></div>
+            <div class="about-achievements__label">Countries served</div>
+          </div>
+          <div>
+            <div class="about-achievements__value"><span class="js-counter" data-target="4.9" data-suffix="/5" data-decimals="1">0</span></div>
+            <div class="about-achievements__label">Average client rating</div>
+          </div>
+          <div>
+            <div class="about-achievements__value"><span class="js-counter" data-target="40" data-suffix="+">0</span></div>
+            <div class="about-achievements__label">Team members</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CTA BANNER ==================== -->
+    <section id="contact" class="section" aria-labelledby="cta-title">
+      <div class="container">
+        <div class="cta-banner reveal">
+          <img
+            class="cta-banner__bg"
+            src="images/photo-1521791136064-7986c2920216-w800-q60.webp"
+            alt=""
+            width="800"
+            height="450"
+            loading="lazy"
+            decoding="async"
+            aria-hidden="true"
+            onerror="this.src='images/photo-1556761175-b413da4baf72-w600-q50.webp'"
+          />
+          <div class="blob blob--green blob--animate" style="width: 320px; height: 320px; top: -80px; left: -60px; opacity: .25;"></div>
+          <div class="blob blob--teal" style="width: 280px; height: 280px; bottom: -80px; right: -40px; opacity: .25;"></div>
+          <h2 id="cta-title" class="heading cta-banner__title">Work with people who treat your money <span class="gradient-text">like their own</span>.</h2>
+          <p class="cta-banner__text">Book a free consultation and meet the team behind the numbers.</p>
+          <div class="about-cta__actions">
+            <a href="mailto:hello@stackly.com" class="btn btn--white btn--primary">Book a Free Consultation</a>
+            <a href="#team" class="btn btn--outline about-cta__link-btn">Meet the team</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer" aria-label="Footer">
+    <img
+      class="footer__bg"
+      src="images/photo-1573164713988-8665fc963095-w800-q45.webp"
+      alt=""
+      width="800"
+      height="500"
+      loading="lazy"
+      decoding="async"
+      aria-hidden="true"
+      onerror="this.src='images/photo-1556761175-b413da4baf72-w800-q45.webp'"
+    />
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="index.html" class="footer__logo">
+          <img class="logo__img" src="images/logo/logo-stackly-on-dark.png" alt="Stackly" width="346" height="100" decoding="async" />
+        </a>
+          <p class="footer__tagline">Numbers, solved. Premium finance and accounting services for modern businesses.</p>
+                    <div class="footer__socials">
+            <a href="404.html" class="footer__social" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+            <a href="404.html" class="footer__social" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a href="404.html" class="footer__social" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+            <a href="404.html" class="footer__social" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg></a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer__title">Services</h4>
+          <ul class="footer__links">
+            <li><a href="404.html" class="footer__link">Bookkeeping</a></li>
+            <li><a href="404.html" class="footer__link">Tax Preparation</a></li>
+            <li><a href="404.html" class="footer__link">Payroll</a></li>
+            <li><a href="404.html" class="footer__link">Financial Planning</a></li>
+            <li><a href="404.html" class="footer__link">CFO Advisory</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer__title">Company</h4>
+          <ul class="footer__links">
+            <li><a href="404.html" class="footer__link is-active" aria-current="page">About Us</a></li>
+            <li><a href="404.html" class="footer__link">How It Works</a></li>
+            <li><a href="404.html" class="footer__link">Pricing</a></li>
+            <li><a href="404.html" class="footer__link">Careers</a></li>
+            <li><a href="404.html" class="footer__link">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer__title">Resources</h4>
+          <ul class="footer__links">
+            <li><a href="404.html" class="footer__link">Blog</a></li>
+            <li><a href="404.html" class="footer__link">FAQ</a></li>
+            <li><a href="404.html" class="footer__link">Case Studies</a></li>
+            <li><a href="404.html" class="footer__link">Privacy Policy</a></li>
+            <li><a href="404.html" class="footer__link">Terms of Service</a></li>
+          </ul>
+
+          <h4 class="footer__title" style="margin-top: 1.75rem;">Newsletter</h4>
+          <form class="footer__newsletter" onsubmit="event.preventDefault(); alert('Thanks for subscribing!');">
+            <label for="newsletter-email" class="sr-only">Email address</label>
+            <input id="newsletter-email" class="footer__input" type="email" placeholder="you@company.com" required />
+            <button class="footer__submit" type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>&copy; 2026 Stackly. All rights reserved.</p>
+        <div class="footer__legal">
+          <a href="404.html">Privacy</a>
+          <a href="404.html">Terms</a>
+          <a href="404.html">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script src="js/about.js"></script>
+
+  <script src="js/redirect-404.js"></script>
+</body>
+</html>

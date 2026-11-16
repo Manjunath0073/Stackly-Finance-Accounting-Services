@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Stackly Insights — practical tax, accounting, payroll, and finance guidance for modern business owners and operators." />
+  <title>Blog &amp; Insights — Stackly Finance &amp; Accounting Service</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%2310B981'/%3E%3Cpath d='M7 12l3 3 7-7' stroke='%23fff' stroke-width='2.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/blog.css" />
+</head>
+<body>
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="header js-header">
+    <div class="container">
+      <a href="index.html" class="logo" aria-label="Stackly home">
+        <img class="logo__img logo__img--light" src="images/logo/logo-stackly-on-light.png" alt="Stackly" width="346" height="100" decoding="async" />
+        <img class="logo__img logo__img--dark" src="images/logo/logo-stackly-on-dark.png" alt="Stackly" width="346" height="100" decoding="async" />
+      </a>
+
+      <nav class="nav" aria-label="Main navigation">
+        <ul class="nav__list">
+          <li><a href="index.html" class="nav__link">Home</a></li>
+          <li><a href="services.html" class="nav__link">Services</a></li>
+          <li><a href="about.html" class="nav__link">About</a></li>
+          <li><a href="pricing.html" class="nav__link">Pricing</a></li>
+          <li><a href="blog.html" class="nav__link is-active" aria-current="page">Blog</a></li>
+          <li><a href="contact.html" class="nav__link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__actions">
+        <button class="theme-toggle js-theme-toggle" type="button" aria-label="Toggle dark mode">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5" />
+            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+          </svg>
+        </button>
+        <a href="login.html" class="btn btn--primary btn--small header__cta">Login</a>
+        <button class="menu-toggle js-menu-toggle" type="button" aria-expanded="false" aria-label="Toggle menu">
+          <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="18" x2="21" y2="18" />
+          </svg>
+          <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile-nav js-mobile-nav" aria-label="Mobile navigation">
+      <ul class="mobile-nav__list">
+        <li><a href="index.html" class="mobile-nav__link">Home</a></li>
+        <li><a href="services.html" class="mobile-nav__link">Services</a></li>
+        <li><a href="about.html" class="mobile-nav__link">About</a></li>
+        <li><a href="pricing.html" class="mobile-nav__link">Pricing</a></li>
+        <li><a href="blog.html" class="mobile-nav__link is-active" aria-current="page">Blog</a></li>
+        <li><a href="contact.html" class="mobile-nav__link">Contact</a></li>
+      </ul>
+      <a href="login.html" class="btn btn--primary btn--small mobile-nav__cta">Login</a>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ==================== FEATURED STORY HERO ==================== -->
+    <section class="blog-hero" aria-labelledby="featured-title">
+      <div class="blog-hero__bg" aria-hidden="true"></div>
+      <div class="container">
+        <nav class="blog-breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+          <span aria-current="page">Blog</span>
+        </nav>
+
+        <article class="blog-featured reveal">
+          <div class="blog-featured__media">
+            <img
+              src="images/photo-1450101499163-c8848c66ca85-w800-q50.webp"
+              alt="Close-up of a person reviewing and annotating financial paperwork"
+              width="800"
+              height="600"
+              loading="eager"
+              decoding="async"
+              onerror="this.src='images/photo-1554224155-6726b3ff858f-w800-q70.webp'"
+            />
+            <span class="blog-featured__badge">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              Featured
+            </span>
+          </div>
+
+          <div class="blog-featured__content">
+            <span class="blog-featured__cat">Tax Strategy</span>
+            <h1 id="featured-title" class="blog-featured__title">
+              <a href="#">The 2026 tax calendar: deadlines, deductions, and decisions founders shouldn't miss.</a>
+            </h1>
+            <p class="blog-featured__excerpt">
+              A practical walkthrough of the filings, payments, and planning windows that matter this year — plus the three dates most founders discover too late.
+            </p>
+            <div class="blog-featured__author">
+              <img
+                class="blog-featured__avatar"
+                src="images/photo-1560250097-0b93528c311a-w200-q70.webp"
+                alt="David Park portrait"
+                width="40"
+                height="40"
+                loading="lazy"
+                decoding="async"
+                onerror="this.src='images/photo-1507003211169-0a1dd7228f2d-w400-q70.webp'"
+              />
+              <div>
+                <div class="blog-featured__author-name">David Park</div>
+                <div class="blog-featured__meta">February 18, 2026 · 8 min read</div>
+              </div>
+            </div>
+            <a href="#" class="blog-featured__link">Read the story <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ==================== ARTICLE GRID ==================== -->
+    <section id="articles" class="section" aria-labelledby="articles-title">
+      <div class="container">
+        <div class="section-header section-header--center reveal">
+          <span class="eyebrow">Latest insights</span>
+          <h2 id="articles-title" class="heading h2">Practical finance, straight to the point.</h2>
+          <p class="text-body">No jargon, no fluff. Just the tax, accounting, and finance guidance we give our own clients.</p>
+        </div>
+
+        <div class="blog-filters reveal" role="group" aria-label="Filter articles by category">
+          <button class="blog-filter js-article-filter is-active" type="button" data-filter="all" aria-pressed="true">All</button>
+          <button class="blog-filter js-article-filter" type="button" data-filter="tax" aria-pressed="false">Tax</button>
+          <button class="blog-filter js-article-filter" type="button" data-filter="accounting" aria-pressed="false">Accounting</button>
+          <button class="blog-filter js-article-filter" type="button" data-filter="business" aria-pressed="false">Business</button>
+          <button class="blog-filter js-article-filter" type="button" data-filter="finance" aria-pressed="false">Finance</button>
+        </div>
+
+        <p class="sr-only js-filter-status" aria-live="polite">Showing all 6 articles in all categories.</p>
+
+        <div class="blog-grid js-article-grid">
+          <a class="card blog-card js-article-card" data-category="tax" href="#" aria-label="Read the article: The 2026 tax deadlines every founder should know">
+            <div class="blog-card__media">
+              <img
+                src="images/photo-1554224155-6726b3ff858f-w400-q55.webp"
+                alt="Tax calendar, calculator, and financial paperwork"
+                width="400"
+                height="250"
+                loading="lazy"
+                decoding="async"
+                onerror="this.src='images/photo-1450101499163-c8848c66ca85-w400-q55.webp'"
+              />
+            </div>
+            <div class="blog-card__body">
+              <span class="blog-card__cat">Tax</span>
+              <h3 class="blog-card__title">The 2026 tax deadlines every founder should know</h3>
+              <p class="blog-card__excerpt">A month-by-month guide to filings, estimates, and the deadlines that sneak up fastest.</p>
+              <div class="blog-card__meta">
+                <span>Amara Okafor</span>
+                <span>Feb 18, 2026</span>
+                <span>6 min read</span>
+              </div>
+              <span class="blog-card__read">Read more <span aria-hidden="true">→</span></span>
+            </div>
+          </a>
+
+          <a class="card blog-card js-article-card" data-category="accounting" href="#" aria-label="Read the article: How to read your P&amp;L in 10 minutes">
+            <div class="blog-card__media">
+              <img
+                src="images/photo-1460925895917-afdab827c52f-w400-q55.webp"
+                alt="Financial dashboard showing profit and loss metrics"
+                width="400"
+                height="250"
+                loading="lazy"
+                decoding="async"
+                onerror="this.src='images/photo-1526304640581-d334cdbbf45e-w500-q50.webp'"
+              />
+            </div>
+            <div class="blog-card__body">
+              <span class="blog-card__cat">Accounting</span>
+              <h3 class="blog-card__title">How to read your P&amp;L in 10 minutes</h3>
+              <p class="blog-card__excerpt">The five lines that tell you whether your business is actually making money — and what to do next.</p>
+              <div class="blog-card__meta">
+                <span>James Whitfield</span>
+                <span>Feb 12, 2026</span>
+                <span>5 min read</span>
+              </div>
+              <span class="blog-card__read">Read more <span aria-hidden="true">→</span></span>
+            </div>
+          </a>
+
+          <a class="card blog-card js-article-card" data-category="business" href="#" aria-label="Read the article: A payroll compliance checklist for small teams">
+            <div class="blog-card__media">
+              <img
+                src="images/photo-1521737711867-e3b97375f902-w400-q55.webp"
+                alt="Small team reviewing payroll and compliance tasks"
+                width="400"
+                height="250"
+                loading="lazy"
+                decoding="async"
+                onerror="this.src='images/photo-1556761175-b413da4baf72-w400-q55.webp'"
+              />
+            </div>
+            <div class="blog-card__body">
+              <span class="blog-card__cat">Business</span>
+              <h3 class="blog-card__title">A payroll compliance checklist for small teams</h3>
+              <p class="blog-card__excerpt">Everything to review before your next pay run, from worker classifications to state registrations.</p>
+              <div class="blog-card__meta">
+                <span>Priya Malhotra</span>
+                <span>Feb 08, 2026</span>
+                <span>7 min read</span>
+              </div>
+              <span class="blog-card__read">Read more <span aria-hidden="true">→</span></span>
+            </div>
+          </a>
+
+          <a class="card blog-card js-article-card" data-category="finance" href="#" aria-label="Read the article: Cash flow forecasting without the spreadsheet spiral">
+            <div class="blog-card__media">
+              <img
+                src="images/photo-1526304640581-d334cdbbf45e-w500-q50.webp"
+                alt="Cash flow charts and financial growth graph"
+                width="500"
+                height="333"
+                loading="lazy"
+                decoding="async"
+                onerror="this.src='images/photo-1460925895917-afdab827c52f-w400-q55.webp'"
+              />
+            </div>
+            <div class="blog-card__body">
+              <span class="blog-card__cat">Finance</span>
+              <h3 class="blog-card__title">Cash flow forecasting without the spreadsheet spiral</h3>
+              <p class="blog-card__excerpt">A simple 13-week model you can maintain in under 20 minutes a week.</p>
+              <div class="blog-card__meta">
+                <span>David Park</span>
+                <span>Jan 30, 2026</span>
+                <span>9 min read</span>
+              </div>
+              <span class="blog-card__read">Read more <span aria-hidden="true">→</span></span>
+            </div>
+          </a>
+
+          <a class="card blog-card js-article-card" data-category="tax" href="#" aria-label="Read the article: R&amp;D tax credits: what founders consistently miss">
+            <div class="blog-card__media">
+              <img
+                src="images/photo-1553729459-efe14ef6055d-w600-q50.webp"
+                alt="Finance and tax planning imagery with currency"
+                width="600"
+                height="400"
+                loading="lazy"
+                decoding="async"
+                onerror="this.src='images/photo-1554224155-6726b3ff858f-w400-q55.webp'"
+              />
+            </div>
+            <div class="blog-card__body">
+              <span class="blog-card__cat">Tax</span>
+              <h3 class="blog-card__title">R&amp;D tax credits: what founders consistently miss</h3>
+              <p class="blog-card__excerpt">The documentation, payroll, and project details that turn overlooked work into real savings.</p>
+              <div class="blog-card__meta">
+                <span>Amara Okafor</span>
+                <span>Jan 24, 2026</span>
+                <span>6 min read</span>
+              </div>
+              <span class="blog-card__read">Read more <span aria-hidden="true">→</span></span>
+            </div>
+          </a>
+
+          <a class="card blog-card js-article-card" data-category="business" href="#" aria-label="Read the article: When should you hire your first CFO?">
+            <div class="blog-card__media">
+              <img
+                src="images/photo-1551836022-d5d88e9218df-w400-q55.webp"
+                alt="Leadership team discussing finance strategy in a boardroom"
+                width="400"
+                height="250"
+                loading="lazy"
+                decoding="async"
+                onerror="this.src='images/photo-1573164713988-8665fc963095-w400-q55.webp'"
+              />
+            </div>
+            <div class="blog-card__body">
+              <span class="blog-card__cat">Business</span>
+              <h3 class="blog-card__title">When should you hire your first CFO?</h3>
+              <p class="blog-card__excerpt">Five signals it's time for senior finance leadership — and what to hire first if it isn't.</p>
+              <div class="blog-card__meta">
+                <span>James Whitfield</span>
+                <span>Jan 16, 2026</span>
+                <span>8 min read</span>
+              </div>
+              <span class="blog-card__read">Read more <span aria-hidden="true">→</span></span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TRENDING ==================== -->
+    <section id="trending" class="section" aria-labelledby="trending-title">
+      <div class="container">
+        <div class="blog-section-head reveal">
+          <div>
+            <span class="eyebrow">Most read</span>
+            <h2 id="trending-title" class="heading h2">Trending this month.</h2>
+          </div>
+          <p>The pieces our clients and community keep coming back to — ranked by reads this month.</p>
+        </div>
+
+        <div class="blog-trends reveal">
+          <a class="blog-trend" href="#">
+            <span class="blog-trend__num">01</span>
+            <img class="blog-trend__thumb" src="images/photo-1554224155-6726b3ff858f-w400-q55.webp" alt="Tax and accounting paperwork" width="80" height="80" loading="lazy" decoding="async" onerror="this.src='images/photo-1450101499163-c8848c66ca85-w400-q55.webp'" />
+            <div class="blog-trend__body">
+              <span class="blog-trend__cat">Tax</span>
+              <h3 class="blog-trend__title">The 2026 tax deadlines every founder should know</h3>
+            </div>
+            <span class="blog-trend__views">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              12.4k views
+            </span>
+            <span class="blog-trend__arrow" aria-hidden="true">→</span>
+          </a>
+
+          <a class="blog-trend" href="#">
+            <span class="blog-trend__num">02</span>
+            <img class="blog-trend__thumb" src="images/photo-1460925895917-afdab827c52f-w400-q55.webp" alt="Financial analytics and P&amp;L dashboard" width="80" height="80" loading="lazy" decoding="async" onerror="this.src='images/photo-1551288049-bebda4e38f71-w400-q55.webp'" />
+            <div class="blog-trend__body">
+              <span class="blog-trend__cat">Accounting</span>
+              <h3 class="blog-trend__title">How to read your P&amp;L in 10 minutes</h3>
+            </div>
+            <span class="blog-trend__views">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              9.8k views
+            </span>
+            <span class="blog-trend__arrow" aria-hidden="true">→</span>
+          </a>
+
+          <a class="blog-trend" href="#">
+            <span class="blog-trend__num">03</span>
+            <img class="blog-trend__thumb" src="images/photo-1521791136064-7986c2920216-w300-q60.webp" alt="Client and advisor shaking hands after a meeting" width="80" height="80" loading="lazy" decoding="async" onerror="this.src='images/photo-1556761175-b413da4baf72-w400-q55.webp'" />
+            <div class="blog-trend__body">
+              <span class="blog-trend__cat">Accounting</span>
+              <h3 class="blog-trend__title">What a clean monthly close actually looks like</h3>
+            </div>
+            <span class="blog-trend__views">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              8.1k views
+            </span>
+            <span class="blog-trend__arrow" aria-hidden="true">→</span>
+          </a>
+
+          <a class="blog-trend" href="#">
+            <span class="blog-trend__num">04</span>
+            <img class="blog-trend__thumb" src="images/photo-1573164713988-8665fc963095-w400-q55.webp" alt="Modern office used for board reporting" width="80" height="80" loading="lazy" decoding="async" onerror="this.src='images/photo-1551836022-d5d88e9218df-w400-q55.webp'" />
+            <div class="blog-trend__body">
+              <span class="blog-trend__cat">Finance</span>
+              <h3 class="blog-trend__title">Five reports every board wants to see</h3>
+            </div>
+            <span class="blog-trend__views">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              7.6k views
+            </span>
+            <span class="blog-trend__arrow" aria-hidden="true">→</span>
+          </a>
+
+          <a class="blog-trend" href="#">
+            <span class="blog-trend__num">05</span>
+            <img class="blog-trend__thumb" src="images/photo-1554774853-aae0a22c8aa4-w600-q50.webp" alt="Team meeting about payroll taxes and compliance" width="80" height="80" loading="lazy" decoding="async" onerror="this.src='images/photo-1521737711867-e3b97375f902-w400-q55.webp'" />
+            <div class="blog-trend__body">
+              <span class="blog-trend__cat">Business</span>
+              <h3 class="blog-trend__title">A founder's guide to payroll taxes</h3>
+            </div>
+            <span class="blog-trend__views">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              6.9k views
+            </span>
+            <span class="blog-trend__arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== EDITOR'S PICKS ==================== -->
+    <section id="picks" class="section" aria-labelledby="picks-title">
+      <div class="container">
+        <div class="blog-picks__header reveal">
+          <div>
+            <span class="eyebrow">Editor's picks</span>
+            <h2 id="picks-title" class="heading h2">Worth your time.</h2>
+            <p class="text-body" style="margin-top: 0.75rem;">Three deeper reads selected by the Stackly team.</p>
+          </div>
+          <div class="blog-picks__controls">
+            <button class="blog-picks__arrow js-picks-prev" type="button" aria-label="Previous editor's pick" aria-controls="picks-track">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <button class="blog-picks__arrow js-picks-next" type="button" aria-label="Next editor's pick" aria-controls="picks-track">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <div id="picks-track" class="blog-picks__viewport js-picks-track reveal" role="region" tabindex="0" aria-label="Editor's picks carousel. Scroll horizontally to browse.">
+          <a class="blog-pick" href="#" aria-label="Read the editor's pick: The finance stack we recommend at every stage">
+            <img
+              src="images/photo-1556761175-b413da4baf72-w800-q45.webp"
+              alt="Finance team collaborating around a table"
+              width="800"
+              height="600"
+              loading="lazy"
+              decoding="async"
+              onerror="this.src='images/photo-1521737711867-e3b97375f902-w600-q50.webp'"
+            />
+            <div class="blog-pick__content">
+              <span class="blog-pick__cat">Finance</span>
+              <h3 class="blog-pick__title">The finance stack we recommend at every stage</h3>
+              <span class="blog-pick__author">By David Park</span>
+            </div>
+          </a>
+
+          <a class="blog-pick" href="#" aria-label="Read the editor's pick: Tax planning is a year-round sport">
+            <img
+              src="images/photo-1554774853-aae0a22c8aa4-w600-q50.webp"
+              alt="Advisors discussing year-round tax planning"
+              width="600"
+              height="450"
+              loading="lazy"
+              decoding="async"
+              onerror="this.src='images/photo-1450101499163-c8848c66ca85-w800-q50.webp'"
+            />
+            <div class="blog-pick__content">
+              <span class="blog-pick__cat">Tax</span>
+              <h3 class="blog-pick__title">Tax planning is a year-round sport</h3>
+              <span class="blog-pick__author">By Amara Okafor</span>
+            </div>
+          </a>
+
+          <a class="blog-pick" href="#" aria-label="Read the editor's pick: Building a board deck investors actually read">
+            <img
+              src="images/photo-1573164713988-8665fc963095-w1000-q40.webp"
+              alt="Modern office prepared for a board meeting"
+              width="1000"
+              height="750"
+              loading="lazy"
+              decoding="async"
+              onerror="this.src='images/photo-1556761175-b413da4baf72-w600-q50.webp'"
+            />
+            <div class="blog-pick__content">
+              <span class="blog-pick__cat">Business</span>
+              <h3 class="blog-pick__title">Building a board deck investors actually read</h3>
+              <span class="blog-pick__author">By James Whitfield</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== EXPLORE BY TOPIC ==================== -->
+    <section id="topics" class="section" aria-labelledby="topics-title">
+      <div class="container">
+        <div class="section-header section-header--center reveal">
+          <span class="eyebrow">Browse by category</span>
+          <h2 id="topics-title" class="heading h2">Explore by topic.</h2>
+          <p class="text-body">Jump straight to the area you're working through. Each topic filters the article grid for you.</p>
+        </div>
+
+        <div class="blog-topics reveal">
+          <a class="card blog-topic js-topic-filter" href="#articles" data-filter="tax">
+            <span class="blog-topic__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="8" y2="10"/><line x1="12" y1="10" x2="12" y2="10"/><line x1="16" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="8" y2="14"/><line x1="12" y1="14" x2="12" y2="14"/><line x1="16" y1="14" x2="16" y2="14"/><line x1="8" y1="18" x2="16" y2="18"/></svg>
+            </span>
+            <span class="blog-topic__name">Tax Planning</span>
+            <span class="blog-topic__count">24 articles</span>
+          </a>
+
+          <a class="card blog-topic js-topic-filter" href="#articles" data-filter="accounting">
+            <span class="blog-topic__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><line x1="8" y1="7" x2="16" y2="7"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+            </span>
+            <span class="blog-topic__name">Bookkeeping</span>
+            <span class="blog-topic__count">31 articles</span>
+          </a>
+
+          <a class="card blog-topic js-topic-filter" href="#articles" data-filter="business">
+            <span class="blog-topic__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+            </span>
+            <span class="blog-topic__name">Business Growth</span>
+            <span class="blog-topic__count">18 articles</span>
+          </a>
+
+          <a class="card blog-topic js-topic-filter" href="#articles" data-filter="business">
+            <span class="blog-topic__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+            </span>
+            <span class="blog-topic__name">Payroll</span>
+            <span class="blog-topic__count">16 articles</span>
+          </a>
+
+          <a class="card blog-topic js-topic-filter" href="#articles" data-filter="accounting">
+            <span class="blog-topic__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+            </span>
+            <span class="blog-topic__name">Audits</span>
+            <span class="blog-topic__count">12 articles</span>
+          </a>
+
+          <a class="card blog-topic js-topic-filter" href="#articles" data-filter="finance">
+            <span class="blog-topic__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
+            </span>
+            <span class="blog-topic__name">Startup Finance</span>
+            <span class="blog-topic__count">21 articles</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== NEWSLETTER ==================== -->
+    <section id="newsletter" class="section" aria-labelledby="newsletter-title">
+      <div class="container">
+        <div class="blog-newsletter reveal">
+          <div class="blob blob--green" style="width: 300px; height: 300px; top: -90px; right: -60px; opacity: 0.3;"></div>
+          <div class="blob blob--teal" style="width: 260px; height: 260px; bottom: -80px; left: -50px; opacity: 0.25;"></div>
+
+          <div class="blog-newsletter__inner">
+            <div>
+              <span class="eyebrow">The Stackly briefing</span>
+              <h2 id="newsletter-title" class="heading blog-newsletter__title">Get insights in your inbox.</h2>
+              <p class="blog-newsletter__text">One practical email a month on tax, cash flow, and the numbers that matter. Written by our team, not a content farm.</p>
+            </div>
+
+            <div>
+              <form class="blog-newsletter__form js-newsletter-form">
+                <label class="sr-only" for="blog-newsletter-email">Email address</label>
+                <input
+                  class="blog-newsletter__input"
+                  id="blog-newsletter-email"
+                  type="email"
+                  placeholder="you@company.com"
+                  autocomplete="email"
+                  required
+                />
+                <button class="btn btn--primary blog-newsletter__btn" type="submit">Subscribe</button>
+              </form>
+
+              <p class="blog-newsletter__privacy">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                No spam. Unsubscribe anytime.
+              </p>
+
+              <p class="blog-newsletter__success js-newsletter-success" role="status" tabindex="-1" hidden>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                You're in! Check your inbox for a welcome note.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== COMPACT CTA ==================== -->
+    <section id="contact" class="section" aria-labelledby="cta-title">
+      <div class="container">
+        <div class="blog-cta reveal">
+          <div>
+            <h2 id="cta-title" class="blog-cta__title">Have a specific question? Ask an expert.</h2>
+            <p class="blog-cta__text">Tell us what's on your mind and we'll point you to the right resource — or the right person.</p>
+          </div>
+          <a href="mailto:hello@stackly.com" class="btn btn--primary">Book a Free Consultation</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer" aria-label="Footer">
+    <img
+      class="footer__bg"
+      src="images/photo-1573164713988-8665fc963095-w800-q45.webp"
+      alt=""
+      width="800"
+      height="500"
+      loading="lazy"
+      decoding="async"
+      aria-hidden="true"
+      onerror="this.src='images/photo-1556761175-b413da4baf72-w800-q45.webp'"
+    />
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="index.html" class="footer__logo">
+          <img class="logo__img" src="images/logo/logo-stackly-on-dark.png" alt="Stackly" width="346" height="100" decoding="async" />
+        </a>
+          <p class="footer__tagline">Numbers, solved. Premium finance and accounting services for modern businesses.</p>
+                    <div class="footer__socials">
+            <a href="404.html" class="footer__social" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+            <a href="404.html" class="footer__social" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a href="404.html" class="footer__social" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+            <a href="404.html" class="footer__social" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg></a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer__title">Services</h4>
+          <ul class="footer__links">
+            <li><a href="404.html" class="footer__link">Bookkeeping</a></li>
+            <li><a href="404.html" class="footer__link">Tax Preparation</a></li>
+            <li><a href="404.html" class="footer__link">Payroll</a></li>
+            <li><a href="404.html" class="footer__link">Financial Planning</a></li>
+            <li><a href="404.html" class="footer__link">CFO Advisory</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer__title">Company</h4>
+          <ul class="footer__links">
+            <li><a href="404.html" class="footer__link">About Us</a></li>
+            <li><a href="404.html" class="footer__link">How It Works</a></li>
+            <li><a href="404.html" class="footer__link">Pricing</a></li>
+            <li><a href="404.html" class="footer__link">Careers</a></li>
+            <li><a href="404.html" class="footer__link">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer__title">Resources</h4>
+          <ul class="footer__links">
+            <li><a href="404.html" class="footer__link is-active" aria-current="page">Blog</a></li>
+            <li><a href="404.html" class="footer__link">FAQ</a></li>
+            <li><a href="404.html" class="footer__link">Case Studies</a></li>
+            <li><a href="404.html" class="footer__link">Privacy Policy</a></li>
+            <li><a href="404.html" class="footer__link">Terms of Service</a></li>
+          </ul>
+
+          <h4 class="footer__title" style="margin-top: 1.75rem;">Need a hand?</h4>
+          <p class="footer__tagline" style="margin-bottom: 0.75rem;">Talk to our team about your next cleanup, hire, or finance stack.</p>
+          <a href="404.html" class="footer__link">Book a consultation →</a>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>&copy; 2026 Stackly. All rights reserved.</p>
+        <div class="footer__legal">
+          <a href="404.html">Privacy</a>
+          <a href="404.html">Terms</a>
+          <a href="404.html">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script src="js/blog.js"></script>
+
+  <script src="js/redirect-404.js"></script>
+</body>
+</html>
