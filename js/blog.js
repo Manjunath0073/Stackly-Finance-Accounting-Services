@@ -162,6 +162,7 @@
     if (!form) return;
 
     const success = document.querySelector('.js-newsletter-success');
+    let successTimer = null;
 
     form.addEventListener('submit', (event) => {
       event.preventDefault();
@@ -172,11 +173,20 @@
         return;
       }
 
-      form.hidden = true;
+      if (input) input.value = '';
+
+      if (successTimer) {
+        window.clearTimeout(successTimer);
+        successTimer = null;
+      }
 
       if (success) {
         success.hidden = false;
         success.focus();
+        successTimer = window.setTimeout(() => {
+          success.hidden = true;
+          successTimer = null;
+        }, 3000);
       }
     });
   }

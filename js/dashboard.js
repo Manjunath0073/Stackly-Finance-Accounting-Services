@@ -1134,7 +1134,7 @@
       window.setTimeout(() => toast.remove(), 200);
     };
 
-    const timer = window.setTimeout(remove, 4200);
+    const timer = window.setTimeout(remove, 3000);
     toast.querySelector('.toast__close').addEventListener('click', () => {
       window.clearTimeout(timer);
       remove();

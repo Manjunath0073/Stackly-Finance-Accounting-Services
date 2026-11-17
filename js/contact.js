@@ -6,6 +6,8 @@
 (function () {
   'use strict';
 
+  const NAME_RE = /^[\p{L}\p{M}.'’\- ]+$/u;
+
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
   } else {
@@ -26,13 +28,27 @@
     const success = document.querySelector('.js-contact-success');
     const resetButton = document.querySelector('.js-contact-reset');
     const submitButton = form.querySelector('button[type="submit"]');
+    let successTimer = null;
 
     const fields = [
       {
         input: form.querySelector('#name'),
         error: form.querySelector('#name-error'),
-        validate: (value) => value.trim().length >= 2,
-        message: 'Please enter your name.',
+        validate: (value) => {
+          const name = value.trim().replace(/\s+/g, ' ');
+
+          if (!name) return 'Please enter your name.';
+          if (name.length < 2) return 'Please enter at least 2 characters.';
+          if (!NAME_RE.test(name)) {
+            return 'Name can contain letters, spaces, apostrophes, hyphens, or periods only. Numbers are not allowed.';
+          }
+          if ((name.match(/\p{L}/gu) || []).length < 2) {
+            return 'Please enter a valid name.';
+          }
+
+          return true;
+        },
+        message: 'Please enter a valid name.',
       },
       {
         input: form.querySelector('#email'),
@@ -75,12 +91,14 @@
     };
 
     const validateField = (field) => {
-      if (field.validate(field.input.value)) {
+      const result = field.validate(field.input.value);
+
+      if (result === true) {
         clearError(field);
         return true;
       }
 
-      setError(field, field.message);
+      setError(field, typeof result === 'string' ? result : field.message);
       return false;
     };
 
@@ -121,6 +139,19 @@
           success.hidden = false;
           success.focus();
         }
+
+        if (successTimer) window.clearTimeout(successTimer);
+        successTimer = window.setTimeout(() => {
+          if (success) success.hidden = true;
+          form.hidden = false;
+          form.reset();
+          fields.forEach(clearError);
+          successTimer = null;
+
+          if (fields[0] && fields[0].input) {
+            fields[0].input.focus({ preventScroll: true });
+          }
+        }, 3000);
       }, 600);
     });
 
@@ -142,6 +173,11 @@
 
     if (resetButton) {
       resetButton.addEventListener('click', () => {
+        if (successTimer) {
+          window.clearTimeout(successTimer);
+          successTimer = null;
+        }
+
         form.reset();
         fields.forEach(clearError);
         if (success) success.hidden = true;

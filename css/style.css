@@ -2047,8 +2047,8 @@ html.dark .pricing__bg {
    ----------------------------------------------------- */
 .team__grid {
   display: grid;
-  gap: 1.5rem;
-  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  grid-template-columns: minmax(0, 1fr);
 }
 
 .team-card {
@@ -2129,9 +2129,16 @@ html.dark .pricing__bg {
   color: var(--color-text-body);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 560px) {
   .team__grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .team__grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
 
@@ -2389,12 +2396,14 @@ html.dark .pricing__bg {
 
 .footer__newsletter {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.5rem;
   margin-top: 0.75rem;
 }
 
 .footer__input {
-  flex: 1;
+  flex: 1 1 auto;
+  min-width: 0;
   padding: 0.75rem 1rem;
   border-radius: var(--radius-pill);
   border: 1px solid rgba(255, 255, 255, 0.12);
@@ -2412,18 +2421,48 @@ html.dark .pricing__bg {
 }
 
 .footer__submit {
+  flex: 0 0 auto;
   padding: 0.75rem 1.25rem;
   border-radius: var(--radius-pill);
   background: var(--color-accent-gradient);
   color: #fff;
   font-weight: 600;
   font-size: 0.9rem;
+  white-space: nowrap;
   transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .footer__submit:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
+}
+
+.footer__newsletter-status {
+  flex-basis: 100%;
+  margin: 0.15rem 0 0;
+  color: #A7F3D0;
+  font-size: 0.78rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.footer__newsletter-status::before {
+  content: '✓';
+  margin-right: 0.35rem;
+  color: #34D399;
+}
+
+@media (max-width: 400px) {
+  .footer__newsletter {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .footer__input,
+  .footer__submit {
+    flex: 0 0 auto;
+    width: 100%;
+  }
 }
 
 .footer__bottom {

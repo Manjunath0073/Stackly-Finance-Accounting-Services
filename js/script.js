@@ -16,6 +16,7 @@
     initDarkMode();
     initHeader();
     initMobileNav();
+    initFooterNewsletters();
     initScrollReveal();
     initCounters();
     initFaqAccordion();
@@ -198,6 +199,39 @@
         </div>`;
       panel.appendChild(footer);
     }
+  }
+
+  /* ---------------------------------------------------
+     Footer newsletter forms
+     --------------------------------------------------- */
+  function initFooterNewsletters() {
+    document.querySelectorAll('.footer__newsletter').forEach((form) => {
+      const status = form.querySelector('.footer__newsletter-status');
+      const input = form.querySelector('input[type="email"]');
+      if (!status) return;
+
+      let timer = null;
+
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        if (input && !input.checkValidity()) {
+          input.reportValidity();
+          return;
+        }
+
+        if (timer) window.clearTimeout(timer);
+
+        form.reset();
+        status.textContent = 'Thanks for subscribing!';
+        status.hidden = false;
+
+        timer = window.setTimeout(() => {
+          status.hidden = true;
+          timer = null;
+        }, 3000);
+      });
+    });
   }
 
   /* ---------------------------------------------------
